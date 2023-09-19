@@ -8,7 +8,7 @@ import {
     Text,
     Button,
 } from "@chakra-ui/react";
-import { camisas } from "@/resources/products/camisas";
+import { camisas } from "@/resources/products/masculino/camisas";
 import CardProduct from "../CardProduct";
 import { useRouter } from "next/router";
 

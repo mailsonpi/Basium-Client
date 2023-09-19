@@ -2,7 +2,7 @@ import React from "react";
 import { Flex, Image, Text } from "@chakra-ui/react";
 import { AiFillStar } from "react-icons/ai";
 import { BsCart4 } from "react-icons/bs";
-import { IPart } from "@/resources/products/camisas";
+import { IPart } from "@/resources/products/masculino/camisas";
 
 interface IProps {
     product: IPart;

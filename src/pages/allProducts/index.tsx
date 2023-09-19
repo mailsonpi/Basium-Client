@@ -2,12 +2,12 @@ import React from "react";
 import { NextPage } from "next";
 import { Flex, Heading, Center, Text, Image, Grid } from "@chakra-ui/react";
 import MainLayout from "@/layout/MainLayout";
-import { IPart, camisas } from "@/resources/products/camisas";
-import { novaColecao } from "@/resources/products/novaColecao";
+import { IPart, camisas } from "@/resources/products/masculino/camisas";
+import { novaColecao } from "@/resources/products/masculino/novaColecao";
 import CardProduct from "@/components/CardProduct";
 import { useRouter } from "next/router";
-import { sapatos } from "@/resources/products/sapatos";
-import { calcas } from "@/resources/products/calcas";
+import { sapatos } from "@/resources/products/masculino/sapatos";
+import { calcas } from "@/resources/products/masculino/calcas";
 
 const AllProducts: NextPage = () => {
     const [allProduct, setAllProduct] = React.useState<IPart[]>([]);

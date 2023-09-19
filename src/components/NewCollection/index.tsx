@@ -1,8 +1,8 @@
 import React from "react";
 import { Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import CardProduct from "../CardProduct";
-import { novaColecao } from "@/resources/products/novaColecao";
 import { useRouter } from "next/router";
+import { novaColecao } from "@/resources/products/masculino/novaColecao";
 
 const NewCollection: React.FC = () => {
     const navigator = useRouter();

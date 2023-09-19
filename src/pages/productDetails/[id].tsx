@@ -16,8 +16,8 @@ import {
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import MainLayout from "@/layout/MainLayout";
-import { IPart, camisas } from "@/resources/products/camisas";
-import { novaColecao } from "@/resources/products/novaColecao";
+import { IPart, camisas } from "@/resources/products/masculino/camisas";
+import { novaColecao } from "@/resources/products/masculino/novaColecao";
 
 const ProductDetails: NextPage = () => {
     const [product, setProduct] = React.useState<IPart>();
