@@ -8,15 +8,33 @@ import CardProduct from "@/components/CardProduct";
 import { useRouter } from "next/router";
 import { sapatos } from "@/resources/products/masculino/sapatos";
 import { calcas } from "@/resources/products/masculino/calcas";
+import Pagination from "@/components/Pagination";
 
 const AllProducts: NextPage = () => {
     const [allProduct, setAllProduct] = React.useState<IPart[]>([]);
+    const [page, setPage] = React.useState(1);
+    const [itemPerPage, setItemPerPage] = React.useState(8);
     const router = useRouter();
 
     React.useEffect(() => {
         const items = camisas.concat(novaColecao, sapatos, calcas);
         setAllProduct(items);
     }, []);
+
+    const indexLast = page * itemPerPage;
+    const indexFirst = indexLast - itemPerPage;
+    const productsList = allProduct.slice(indexFirst, indexLast);
+
+    const nextPage = () => {
+        if (productsList.length >= itemPerPage) {
+            setPage(page + 1);
+        }
+    };
+    const prevPage = () => {
+        if (page > 1) {
+            setPage(page - 1);
+        }
+    };
 
     return (
         <MainLayout navbar={{ colorTheming: "darkCyan", hasNavbar: true }}>
@@ -126,18 +144,17 @@ const AllProducts: NextPage = () => {
                     />
                 </Flex>
                 <Grid
-                    w="85%"
+                    w={{ base: "95%", md: "85%" }}
                     mx="auto"
                     gridTemplateColumns={{
-                        base: "1fr",
-                        sm: "repeat(2,1fr)",
+                        base: "repeat(2,1fr)",
                         md: "repeat(3,1fr)",
                         lg: "repeat(4,1fr)",
                     }}
-                    gap={10}
+                    gap={{ base: 3, md: 10 }}
                     mt={14}
                 >
-                    {allProduct.map((product, index) => (
+                    {productsList.map((product, index) => (
                         <CardProduct
                             key={index}
                             product={product}
@@ -147,6 +164,7 @@ const AllProducts: NextPage = () => {
                         />
                     ))}
                 </Grid>
+                <Pagination page={page} prev={prevPage} next={nextPage} />
             </Flex>
         </MainLayout>
     );

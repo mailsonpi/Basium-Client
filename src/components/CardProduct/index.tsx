@@ -22,8 +22,16 @@ const CardProduct: React.FC<IProps> = ({ product, onClick }) => {
             mx="auto"
         >
             <Image rounded={"30px"} w="100%" src={product.image} alt="camisa" />
-            <Text mt={5}>{product.marca}</Text>
-            <Text fontWeight={600}>{product.nome}</Text>
+            <Text mt={5} fontSize={{ base: 14, md: 18 }}>
+                {product.marca}
+            </Text>
+            <Text
+                fontWeight={600}
+                noOfLines={2}
+                fontSize={{ base: 14, md: 18 }}
+            >
+                {product.nome}
+            </Text>
             <Flex justifyContent="space-between" alignItems="center">
                 <Flex direction="column">
                     <Flex mb={1}>
@@ -33,7 +41,9 @@ const CardProduct: React.FC<IProps> = ({ product, onClick }) => {
                         <AiFillStar color="#F0B112" />
                         <AiFillStar color="#F0B112" />
                     </Flex>
-                    <Text fontWeight={600}>{product.price}</Text>
+                    <Text fontWeight={600} fontSize={{ base: 14, md: 18 }}>
+                        {product.price}
+                    </Text>
                 </Flex>
                 <Flex
                     bg="primary.300"
@@ -41,7 +51,7 @@ const CardProduct: React.FC<IProps> = ({ product, onClick }) => {
                         bg: "primary.500",
                     }}
                     transition=".6s"
-                    p={3}
+                    p={{ base: 1, md: 3 }}
                     rounded="full"
                     border="1px solid white"
                 >
