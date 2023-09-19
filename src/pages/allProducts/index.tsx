@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { NextPage } from "next";
 import { Flex, Heading, Center, Text, Image, Grid } from "@chakra-ui/react";
 import MainLayout from "@/layout/MainLayout";
@@ -14,6 +14,7 @@ const AllProducts: NextPage = () => {
     const [allProduct, setAllProduct] = React.useState<IPart[]>([]);
     const [page, setPage] = React.useState(1);
     const [itemPerPage, setItemPerPage] = React.useState(8);
+    const ref = useRef<HTMLDivElement | null>(null);
     const router = useRouter();
 
     React.useEffect(() => {
@@ -28,11 +29,17 @@ const AllProducts: NextPage = () => {
     const nextPage = () => {
         if (productsList.length >= itemPerPage) {
             setPage(page + 1);
+            if (ref.current) {
+                ref.current.scrollIntoView({ behavior: "smooth" });
+            }
         }
     };
     const prevPage = () => {
         if (page > 1) {
             setPage(page - 1);
+            if (ref.current) {
+                ref.current.scrollIntoView({ behavior: "smooth" });
+            }
         }
     };
 
@@ -163,6 +170,7 @@ const AllProducts: NextPage = () => {
                     }}
                     gap={{ base: 3, md: 10 }}
                     mt={14}
+                    ref={ref}
                 >
                     {productsList.map((product, index) => (
                         <CardProduct
