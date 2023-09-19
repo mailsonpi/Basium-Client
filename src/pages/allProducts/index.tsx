@@ -17,6 +17,7 @@ import { blusaSocial } from "@/resources/products/masculino/blusaSocial";
 import { acessorio } from "@/resources/products/masculino/acessorio";
 import { bermudas } from "@/resources/products/masculino/bermudas";
 import { calcaAlfaiataria } from "@/resources/products/masculino/calcaAlfaiataria";
+import { Blazer } from "@/resources/products/masculino/blazer";
 
 const AllProducts: NextPage = () => {
     const [allProduct, setAllProduct] = React.useState<IPart[]>([]);
@@ -34,7 +35,8 @@ const AllProducts: NextPage = () => {
             blusaSocial,
             acessorio,
             bermudas,
-            calcaAlfaiataria
+            calcaAlfaiataria,
+            Blazer
         );
         setAllProduct(items);
     }, []);

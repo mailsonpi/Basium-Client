@@ -15,88 +15,88 @@ export type category =
     | "Bermudas"
     | "Calças Alfaiataria"
     | "Blazer"
-    | "T-Shirts"
+    | "Blazer"
     | "Calças Jeans"
     | "Blusas Sociais";
 
-const Camisas: IPart[] = [
+const Blazer: IPart[] = [
     {
-        id: 1,
-        nome: "Cartoon Astronaut T-Shirts",
+        id: 701,
+        nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
-        image: "/img/products/f1.jpg",
+        image: "https://static.netshoes.com.br/produtos/blazer-masculino-sim-fit-moda-casual/68/QSO-7396-168/QSO-7396-168_zoom1.jpg?ts=1680877203&ims=544x",
         tamanhos: ["P", "M"],
-        category: ["Camisas", "T-Shirts"],
+        category: ["Blazer"],
         description:
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear.",
     },
     {
-        id: 2,
-        nome: "Cartoon Astronaut T-Shirts",
+        id: 702,
+        nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
-        image: "/img/products/f2.jpg",
+        image: "https://static.netshoes.com.br/produtos/blazer-masculino-sim-fit-moda-casual/68/QSO-7396-168/QSO-7396-168_zoom1.jpg?ts=1680877203&ims=544x",
         tamanhos: ["P", "M", "GG"],
-        category: ["Camisas", "T-Shirts", "Nova Coleção"],
+        category: ["Blazer", "Nova Coleção"],
         description:
             "Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 4,
-        nome: "Cartoon Astronaut T-Shirts",
+        id: 704,
+        nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
-        image: "/img/products/f2.jpg",
+        image: "https://static.netshoes.com.br/produtos/blazer-masculino-sim-fit-moda-casual/68/QSO-7396-168/QSO-7396-168_zoom1.jpg?ts=1680877203&ims=544x",
         tamanhos: ["P", "M", "GG"],
-        category: ["Camisas", "T-Shirts", "Nova Coleção"],
+        category: ["Blazer", "Nova Coleção"],
         description:
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 3,
-        nome: "Cartoon Astronaut T-Shirts",
+        id: 703,
+        nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
-        image: "/img/products/f2.jpg",
+        image: "https://static.netshoes.com.br/produtos/blazer-masculino-sim-fit-moda-casual/68/QSO-7396-168/QSO-7396-168_zoom1.jpg?ts=1680877203&ims=544x",
         tamanhos: ["P", "M", "GG"],
-        category: ["Camisas", "T-Shirts"],
+        category: ["Blazer"],
         description:
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 4,
-        nome: "Cartoon Astronaut T-Shirts",
+        id: 704,
+        nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
-        image: "/img/products/f2.jpg",
+        image: "https://static.netshoes.com.br/produtos/blazer-masculino-sim-fit-moda-casual/68/QSO-7396-168/QSO-7396-168_zoom1.jpg?ts=1680877203&ims=544x",
         tamanhos: ["P", "M", "GG"],
-        category: ["Camisas", "T-Shirts"],
+        category: ["Blazer"],
         description:
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 5,
-        nome: "Cartoon Astronaut T-Shirts",
+        id: 705,
+        nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
-        image: "/img/products/f2.jpg",
+        image: "https://static.netshoes.com.br/produtos/blazer-masculino-sim-fit-moda-casual/08/QSO-7396-008/QSO-7396-008_zoom1.jpg?ts=1680877181&ims=544x",
         tamanhos: ["P", "M", "GG"],
-        category: ["Camisas", "T-Shirts", "Nova Coleção"],
+        category: ["Blazer", "Nova Coleção"],
         description:
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 6,
-        nome: "Cartoon Astronaut T-Shirts",
+        id: 706,
+        nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
-        image: "/img/products/f2.jpg",
+        image: "https://static.netshoes.com.br/produtos/blazer-masculino-sim-fit-moda-casual/08/QSO-7396-008/QSO-7396-008_zoom1.jpg?ts=1680877181&ims=544x",
         tamanhos: ["P", "M", "GG"],
-        category: ["Camisas", "T-Shirts", "Nova Coleção"],
+        category: ["Blazer", "Nova Coleção"],
         description:
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
 ];
 
-export { Camisas };
+export { Blazer };
