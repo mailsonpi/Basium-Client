@@ -41,8 +41,8 @@ const CardProduct: React.FC<IProps> = ({ product, onClick }) => {
                         <AiFillStar color="#F0B112" />
                         <AiFillStar color="#F0B112" />
                     </Flex>
-                    <Text fontWeight={600} fontSize={{ base: 14, md: 18 }}>
-                        {product.price}
+                    <Text fontWeight={600} fontSize={{ base: 12, md: 18 }}>
+                        R${product.price}.00
                     </Text>
                 </Flex>
                 <Flex

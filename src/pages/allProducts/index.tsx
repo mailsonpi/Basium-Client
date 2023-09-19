@@ -2,7 +2,11 @@ import React, { useRef } from "react";
 import { NextPage } from "next";
 import { Flex, Heading, Center, Text, Image, Grid } from "@chakra-ui/react";
 import MainLayout from "@/layout/MainLayout";
-import { IPart, camisas } from "@/resources/products/masculino/camisas";
+import {
+    IPart,
+    Camisas,
+    category,
+} from "@/resources/products/masculino/camisas";
 import { novaColecao } from "@/resources/products/masculino/novaColecao";
 import CardProduct from "@/components/CardProduct";
 import { useRouter } from "next/router";
@@ -14,18 +18,28 @@ const AllProducts: NextPage = () => {
     const [allProduct, setAllProduct] = React.useState<IPart[]>([]);
     const [page, setPage] = React.useState(1);
     const [itemPerPage, setItemPerPage] = React.useState(8);
-    const ref = useRef<HTMLDivElement | null>(null);
+    const [search, setSearch] = React.useState<category | null>(null);
+    const ref = useRef<HTMLImageElement | null>(null);
     const router = useRouter();
 
     React.useEffect(() => {
-        const items = camisas.concat(novaColecao, sapatos, calcas);
+        const items = Camisas.concat(novaColecao, sapatos, calcas);
         setAllProduct(items);
     }, []);
 
     const indexLast = page * itemPerPage;
     const indexFirst = indexLast - itemPerPage;
-    const productsList = allProduct.slice(indexFirst, indexLast);
-
+    let productsList = allProduct.slice(indexFirst, indexLast);
+    const renderItem = () => {
+        if (search) {
+            const filtered = allProduct.filter((item) =>
+                item.category.includes(search)
+            );
+            productsList = filtered;
+            return productsList;
+        }
+        return productsList;
+    };
     const nextPage = () => {
         if (productsList.length >= itemPerPage) {
             setPage(page + 1);
@@ -87,7 +101,9 @@ const AllProducts: NextPage = () => {
                         transition=".3s"
                         w={{ base: 36, md: 40 }}
                         src="icone_blusassociais.svg"
+                        onClick={() => setSearch("Blusas Sociais")}
                         alt="Camisas"
+                        cursor="pointer"
                     />
                     <Image
                         _hover={{
@@ -97,7 +113,9 @@ const AllProducts: NextPage = () => {
                         transition=".3s"
                         w={{ base: 36, md: 40 }}
                         src="icone_calçasjeans.svg"
+                        onClick={() => setSearch("Calças Jeans")}
                         alt="Camisas"
+                        cursor="pointer"
                     />
                     <Image
                         _hover={{
@@ -106,8 +124,10 @@ const AllProducts: NextPage = () => {
                         }}
                         transition=".3s"
                         w={{ base: 36, md: 40 }}
+                        onClick={() => setSearch("T-Shirts")}
                         src="icone_tshirts.svg"
                         alt="Camisas"
+                        cursor="pointer"
                     />
                     <Image
                         _hover={{
@@ -117,7 +137,9 @@ const AllProducts: NextPage = () => {
                         transition=".3s"
                         w={{ base: 36, md: 40 }}
                         src="icone_blazer.svg"
+                        onClick={() => setSearch("Blazer")}
                         alt="Camisas"
+                        cursor="pointer"
                     />
                     <Image
                         _hover={{
@@ -127,7 +149,9 @@ const AllProducts: NextPage = () => {
                         transition=".3s"
                         w={{ base: 36, md: 40 }}
                         src="icone_calçasalfaiataria.svg"
+                        onClick={() => setSearch("Calças Alfaiataria")}
                         alt="Camisas"
+                        cursor="pointer"
                     />
                     <Image
                         _hover={{
@@ -137,7 +161,9 @@ const AllProducts: NextPage = () => {
                         transition=".3s"
                         w={{ base: 36, md: 40 }}
                         src="icone_bermudas.svg"
+                        onClick={() => setSearch("Bermudas")}
                         alt="Camisas"
+                        cursor="pointer"
                     />
                     <Image
                         _hover={{
@@ -147,7 +173,9 @@ const AllProducts: NextPage = () => {
                         transition=".3s"
                         w={{ base: 36, md: 40 }}
                         src="icone_calcados2.svg"
+                        onClick={() => setSearch("Calçados")}
                         alt="Camisas"
+                        cursor="pointer"
                     />
                     <Image
                         _hover={{
@@ -157,7 +185,10 @@ const AllProducts: NextPage = () => {
                         transition=".3s"
                         w={{ base: 36, md: 40 }}
                         src="icone_acessorios.svg"
+                        onClick={() => setSearch("Acessórios")}
                         alt="Camisas"
+                        cursor="pointer"
+                        ref={ref}
                     />
                 </Flex>
                 <Grid
@@ -170,9 +201,8 @@ const AllProducts: NextPage = () => {
                     }}
                     gap={{ base: 3, md: 10 }}
                     mt={14}
-                    ref={ref}
                 >
-                    {productsList.map((product, index) => (
+                    {renderItem().map((product, index) => (
                         <CardProduct
                             key={index}
                             product={product}
