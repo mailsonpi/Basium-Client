@@ -18,18 +18,25 @@ const Cart = () => {
                 const message = `Olá, gostaria de fazer o seguinte pedido: ${items.map(
                     (item: any) => {
                         return `
-                        ================
-                        ID: ${item.id}
-                        Produto: ${item.nome}
-                        Tamanho: ${item.size}
-                        Quantidade: ${item.quantity}
-                        Preço unitário: R$${item.price},00
-                        Valor Total: R$${item.price * item.quantity},00
-                        ================
-                        `;
+================
+
+ID: ${item.id}
+
+Produto: ${item.nome}
+
+Tamanho: ${item.size}
+
+Quantidade: ${item.quantity}
+
+Preço unitário: R$${item.price}.00
+
+Valor Total: R$${item.price * item.quantity}.00
+
+================
+`;
                     }
                 )}
-                Valor total do pedido: R$${total},00
+Valor total do pedido: R$${total}.00
                 `;
 
                 const numeroTelefone = "+5575981986136";
