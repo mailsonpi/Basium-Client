@@ -13,6 +13,10 @@ import { useRouter } from "next/router";
 import { sapatos } from "@/resources/products/masculino/sapatos";
 import { calcas } from "@/resources/products/masculino/calcas";
 import Pagination from "@/components/Pagination";
+import { blusaSocial } from "@/resources/products/masculino/blusaSocial";
+import { acessorio } from "@/resources/products/masculino/acessorio";
+import { bermudas } from "@/resources/products/masculino/bermudas";
+import { calcaAlfaiataria } from "@/resources/products/masculino/calcaAlfaiataria";
 
 const AllProducts: NextPage = () => {
     const [allProduct, setAllProduct] = React.useState<IPart[]>([]);
@@ -23,7 +27,15 @@ const AllProducts: NextPage = () => {
     const router = useRouter();
 
     React.useEffect(() => {
-        const items = Camisas.concat(novaColecao, sapatos, calcas);
+        const items = Camisas.concat(
+            novaColecao,
+            sapatos,
+            calcas,
+            blusaSocial,
+            acessorio,
+            bermudas,
+            calcaAlfaiataria
+        );
         setAllProduct(items);
     }, []);
 

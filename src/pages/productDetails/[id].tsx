@@ -16,10 +16,14 @@ import {
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import MainLayout from "@/layout/MainLayout";
-import { IPart, camisas } from "@/resources/products/masculino/camisas";
+import { IPart, Camisas } from "@/resources/products/masculino/camisas";
 import { novaColecao } from "@/resources/products/masculino/novaColecao";
 import { sapatos } from "@/resources/products/masculino/sapatos";
 import { calcas } from "@/resources/products/masculino/calcas";
+import { blusaSocial } from "@/resources/products/masculino/blusaSocial";
+import { acessorio } from "@/resources/products/masculino/acessorio";
+import { bermudas } from "@/resources/products/masculino/bermudas";
+import { calcaAlfaiataria } from "@/resources/products/masculino/calcaAlfaiataria";
 
 const ProductDetails: NextPage = () => {
     const [product, setProduct] = React.useState<IPart>();
@@ -31,12 +35,20 @@ const ProductDetails: NextPage = () => {
     const toast = useToast();
 
     const getProduct = () => {
-        const allProducts = camisas.concat(novaColecao, sapatos, calcas);
-        const camisa = allProducts.find((item) => item.id === Number(id));
+        const allProducts = Camisas.concat(
+            novaColecao,
+            sapatos,
+            calcas,
+            blusaSocial,
+            acessorio,
+            bermudas,
+            calcaAlfaiataria
+        );
+        const camisa = allProducts.find((item: any) => item.id === Number(id));
         setProduct(camisa);
     };
     const getRelations = () => {
-        const produtosFiltrados = camisas.filter((produto) =>
+        const produtosFiltrados = Camisas.filter((produto) =>
             product?.category.every((cat) => produto.category.includes(cat))
         );
         setRelations(produtosFiltrados);
