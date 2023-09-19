@@ -8,7 +8,7 @@ import {
     Text,
     Button,
 } from "@chakra-ui/react";
-import { camisas } from "@/resources/products/masculino/camisas";
+import { Camisas } from "@/resources/products/masculino/camisas";
 import CardProduct from "../CardProduct";
 import { useRouter } from "next/router";
 
@@ -32,7 +32,7 @@ const ProductList: React.FC = () => {
                 gap={10}
                 mt={14}
             >
-                {camisas.map((item, key) => (
+                {Camisas.map((item, key) => (
                     <CardProduct
                         onClick={() =>
                             navigator.push(`productDetails/${item.id}`)
