@@ -18,6 +18,8 @@ import { useRouter } from "next/router";
 import MainLayout from "@/layout/MainLayout";
 import { IPart, camisas } from "@/resources/products/masculino/camisas";
 import { novaColecao } from "@/resources/products/masculino/novaColecao";
+import { sapatos } from "@/resources/products/masculino/sapatos";
+import { calcas } from "@/resources/products/masculino/calcas";
 
 const ProductDetails: NextPage = () => {
     const [product, setProduct] = React.useState<IPart>();
@@ -29,7 +31,7 @@ const ProductDetails: NextPage = () => {
     const toast = useToast();
 
     const getProduct = () => {
-        const allProducts = camisas.concat(novaColecao);
+        const allProducts = camisas.concat(novaColecao, sapatos, calcas);
         const camisa = allProducts.find((item) => item.id === Number(id));
         setProduct(camisa);
     };
@@ -96,16 +98,18 @@ const ProductDetails: NextPage = () => {
                 justifyContent="center"
                 alignItems="center"
             >
-                <Flex>
+                <Flex direction={{ base: "column", md: "row" }}>
                     <Flex direction="column" gap={3}>
                         <Image
                             objectFit="cover"
                             src={product?.image}
                             alt={product?.nome}
-                            w={500}
-                            h={500}
+                            mx="auto"
+                            w={{ base: "90%", md: 500 }}
+                            h={{ base: "40vh", md: 500 }}
+                            mb={5}
                         />
-                        <Flex gap={2}>
+                        <Flex gap={2} display={{ base: "none", md: "flex" }}>
                             {relations.map((item, index) => {
                                 return (
                                     index < 4 && (
@@ -139,8 +143,10 @@ const ProductDetails: NextPage = () => {
                             </Text>
                             <Text>/ {product?.marca}</Text>
                         </Flex>
-                        <Heading>{product?.nome}</Heading>
-                        <Heading>R$ {product?.price}</Heading>
+                        <Heading fontSize={{ base: 28, md: 40 }}>
+                            {product?.nome}
+                        </Heading>
+                        <Heading mb={3}>R$ {product?.price}</Heading>
                         <Select
                             w="max-content"
                             onChange={(e) => setSize(e.target.value)}
@@ -170,9 +176,9 @@ const ProductDetails: NextPage = () => {
                                 </NumberInputStepper>
                             </NumberInput>
                             <Button
-                                h="100%"
+                                h="45px"
                                 color="white"
-                                bg="primary.700"
+                                bg="green.500"
                                 onClick={() => addProduct()}
                             >
                                 Adicionar ao carrinho

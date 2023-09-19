@@ -38,10 +38,11 @@ const AllProducts: NextPage = () => {
                     <Text fontSize={20}>Use cupons e ganhe até 70% off!</Text>
                 </Center>
                 <Flex
-                    flexWrap="nowrap"
+                    flexWrap="wrap"
                     justifyContent="space-between"
                     mx="5%"
                     pt={4}
+                    gap={5}
                 >
                     <Image
                         _hover={{

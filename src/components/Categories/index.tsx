@@ -144,7 +144,7 @@ const Categories: React.FC = () => {
                     h={{ base: 200, md: 330 }}
                     minW={325}
                     mb={5}
-                    bg="url('img/banner/b4.jpg')"
+                    bg="url('/imagem_acessorios1.png')"
                     direction="column"
                     justifyContent="center"
                     bgSize="cover"
@@ -183,7 +183,7 @@ const Categories: React.FC = () => {
                     h={{ base: 200, md: 330 }}
                     minW={325}
                     mb={5}
-                    bg="url('img/banner/b4.jpg')"
+                    bg="url('/imagem_camisasocial1.png')"
                     direction="column"
                     justifyContent="center"
                     bgSize="cover"
@@ -222,7 +222,7 @@ const Categories: React.FC = () => {
                     h={{ base: 200, md: 330 }}
                     minW={325}
                     mb={5}
-                    bg="url('img/banner/b4.jpg')"
+                    bg="url('/imagem_modacorp1.png')"
                     direction="column"
                     justifyContent="center"
                     bgSize="cover"
