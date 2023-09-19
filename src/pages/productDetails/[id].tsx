@@ -24,7 +24,7 @@ import { calcas } from "@/resources/products/masculino/calcas";
 const ProductDetails: NextPage = () => {
     const [product, setProduct] = React.useState<IPart>();
     const [quantity, setQuantity] = React.useState(1);
-    const [size, setSize] = React.useState("não selecionado");
+    const [size, setSize] = React.useState("P");
     const [relations, setRelations] = React.useState<IPart[]>([]);
     const router = useRouter();
     const { id } = router.query;
