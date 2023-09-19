@@ -52,8 +52,18 @@ const AllProducts: NextPage = () => {
                     flexDirection="column"
                     gap={5}
                 >
-                    <Heading fontSize={50}>Nossos Produtos</Heading>
-                    <Text fontSize={20}>Use cupons e ganhe até 70% off!</Text>
+                    <Heading
+                        fontSize={50}
+                        textAlign={{ base: "center", md: "left" }}
+                    >
+                        Nossos Produtos
+                    </Heading>
+                    <Text
+                        fontSize={20}
+                        textAlign={{ base: "center", md: "left" }}
+                    >
+                        Use cupons e ganhe até 70% off!
+                    </Text>
                 </Center>
                 <Flex
                     flexWrap="wrap"
