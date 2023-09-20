@@ -12,7 +12,7 @@ const cyan = {
 };
 const red = {
     50: "#F6F2EF",
-    100: "#E6DBD1",
+    100: "#F2EADE",
     200: "#D5C3B3",
     300: "#C5AC96",
     400: "#bfa38b",

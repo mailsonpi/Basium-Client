@@ -2,9 +2,12 @@ import React from "react";
 import { Flex, Text, Button } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { useCheckSexSelected } from "@/context";
 
 const HomeCarousel: React.FC = () => {
-    const banners = [
+    const { sexSelected } = useCheckSexSelected();
+
+    const bannersMasculine = [
         {
             url: "url('/fullbanner_blazer.svg')",
             text1: "Grandes Ofertas",
@@ -50,9 +53,52 @@ const HomeCarousel: React.FC = () => {
             },
         },
     ];
+    const bannersFeminine = [
+        {
+            url: "url('/fullbanner_roupas4.svg')",
+            text1: "Grandes Ofertas",
+            text2: "Roupas a partir de",
+            text3: "R$ 79,90",
+            off: {
+                text1: "Parcelas de 6x sem juros",
+                text2: "Enviamos para todo Brasil",
+                text3: "Desconto de 10% em compras no pix",
+            },
+        },
+        {
+            url: "url('/fullbanner_acessorios4.svg')",
+            text1: "Grandes Ofertas",
+            text2: "Acessórios a partir de",
+            text3: "R$ 34,99",
+            off: {
+                text1: "Parcelas de 6x sem juros",
+                text2: "Enviamos para todo Brasil",
+                text3: "Desconto de 10% em compras no pix",
+            },
+        },
+        {
+            url: "url('/fullbanner_calcados11.svg')",
+            text1: "Grandes Ofertas",
+            text2: "Seu estilo com",
+            text3: "toque de classe!",
+            off: {
+                text1: "Parcelas de 6x sem juros",
+                text2: "Enviamos para todo Brasil",
+                text3: "Desconto de 10% em compras no pix",
+            },
+        },
+    ];
+
+    const banners =
+        sexSelected === "masculine" ? bannersMasculine : bannersFeminine;
 
     return (
-        <Flex mt={{ base: 10, md: "20" }} w="100%" flexDirection="column">
+        <Flex
+            pt={{ base: 10, md: "20" }}
+            w="100%"
+            flexDirection="column"
+            bg={sexSelected === "masculine" ? "none" : "#EDE5D9"}
+        >
             <Carousel
                 showIndicators={false}
                 showArrows={false}

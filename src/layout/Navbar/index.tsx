@@ -19,7 +19,7 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
             zIndex={1000}
             alignItems="center"
             display={{ base: "none", md: "block" }}
-            bg={colorTheming === "darkCyan" ? "secondary.900" : "primary.500"}
+            bg={colorTheming === "darkCyan" ? "secondary.900" : "primary.100"}
             boxShadow="md"
         >
             <Flex
@@ -29,9 +29,18 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                 mx="auto"
                 h="100%"
             >
-                <Image src="/img/marca_cabecalho.png" alt="Logo" w={32} />
+                <Image
+                    src={
+                        colorTheming !== "darkCyan"
+                            ? "img/marca_cabecalho44.png"
+                            : "/img/marca_cabecalho.png"
+                    }
+                    alt="Logo"
+                    w={32}
+                />
                 <Flex gap={10} alignItems="center">
                     <Text
+                        color={colorTheming === "darkCyan" ? "white" : "black"}
                         cursor="pointer"
                         _hover={{ color: "primary.500" }}
                         fontWeight={600}
@@ -40,14 +49,24 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                         Início
                     </Text>
                     <Text
+                        color={colorTheming === "darkCyan" ? "white" : "black"}
                         cursor="pointer"
                         _hover={{ color: "primary.500" }}
                         fontWeight={600}
-                        onClick={() => router.push("/feminino")}
+                        onClick={() => {
+                            if (colorTheming === "darkCyan") {
+                                router.push("/loading");
+                                localStorage.setItem("sex", "feminine");
+                                return;
+                            }
+                            router.push("/loading");
+                            localStorage.setItem("sex", "masculine");
+                        }}
                     >
-                        Feminino
+                        {colorTheming === "darkCyan" ? "Feminino" : "Masculino"}
                     </Text>
                     <Text
+                        color={colorTheming === "darkCyan" ? "white" : "black"}
                         cursor="pointer"
                         _hover={{ color: "primary.500" }}
                         fontWeight={600}
@@ -56,6 +75,7 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                         Todos os produtos
                     </Text>
                     <Text
+                        color={colorTheming === "darkCyan" ? "white" : "black"}
                         cursor="pointer"
                         _hover={{ color: "primary.500" }}
                         fontWeight={600}
@@ -64,6 +84,7 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                         Dicas
                     </Text>
                     <Text
+                        color={colorTheming === "darkCyan" ? "white" : "black"}
                         cursor="pointer"
                         _hover={{ color: "primary.500" }}
                         fontWeight={600}
@@ -72,6 +93,7 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                         Sobre
                     </Text>
                     <Text
+                        color={colorTheming === "darkCyan" ? "white" : "black"}
                         cursor="pointer"
                         _hover={{ color: "primary.500" }}
                         fontWeight={600}
@@ -80,8 +102,8 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                         Contato
                     </Text>
                     <Box
+                        color={colorTheming === "darkCyan" ? "white" : "black"}
                         cursor="pointer"
-                        color="white"
                         transition=".4s"
                         onClick={() => router.push("/cart")}
                         _hover={{ color: "primary.500" }}

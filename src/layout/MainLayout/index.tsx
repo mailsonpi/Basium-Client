@@ -20,7 +20,7 @@ const MainLayout: React.FC<IProps> = ({ children, navbar }) => {
             {navbar.hasNavbar && (
                 <>
                     <Navbar colorTheming={navbar.colorTheming} />
-                    <Drawable />
+                    <Drawable colorTheming={navbar.colorTheming} />
                 </>
             )}
             <Box mt={"20"}>{children}</Box>

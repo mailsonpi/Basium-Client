@@ -4,10 +4,11 @@ export default function Document() {
     return (
         <Html lang="ptBR">
             <Head>
+                <title>Basium</title>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link
-                    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;600;700&display=swap"
+                    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;600;700&family=Libre+Baskerville:wght@700&display=swap"
                     rel="stylesheet"
                 />
             </Head>

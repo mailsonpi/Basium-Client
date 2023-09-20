@@ -17,7 +17,11 @@ import { AiOutlineMenuFold } from "react-icons/ai";
 import { BsHandbag } from "react-icons/bs";
 import { useRouter } from "next/router";
 
-const Drawable: React.FC = () => {
+interface IProps {
+    colorTheming?: "ligthPink" | "darkCyan";
+}
+
+const Drawable: React.FC<IProps> = ({ colorTheming }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const router = useRouter();
 
@@ -25,7 +29,11 @@ const Drawable: React.FC = () => {
         <>
             <Flex
                 justifyContent="space-between"
-                bg="secondary.900"
+                bg={
+                    colorTheming === "darkCyan"
+                        ? "secondary.900"
+                        : "primary.100"
+                }
                 boxShadow="md"
                 position="fixed"
                 top={-1}
@@ -35,7 +43,7 @@ const Drawable: React.FC = () => {
                 w="101%"
                 zIndex={9999}
                 alignItems="center"
-                px={4}
+                px={8}
                 display={{ base: "flex", md: "none" }}
             >
                 <Box
@@ -43,7 +51,15 @@ const Drawable: React.FC = () => {
                     cursor="pointer"
                     onClick={() => router.push("/")}
                 >
-                    <Image src="/img/marca_cabecalho.png" alt="Logo" w={32} />
+                    <Image
+                        w={36}
+                        src={
+                            colorTheming !== "darkCyan"
+                                ? "img/marca_cabecalho44.png"
+                                : "/img/marca_cabecalho.png"
+                        }
+                        alt="Logo"
+                    />
                 </Box>
                 <Flex gap={3} alignItems="center">
                     <Box
@@ -74,11 +90,27 @@ const Drawable: React.FC = () => {
                                 Início
                             </Text>
                         </Link>
-                        <Link href="/feminino">
-                            <Text fontWeight={600} fontSize={20}>
-                                Feminino
-                            </Text>
-                        </Link>
+                        <Text
+                            color={
+                                colorTheming === "darkCyan" ? "white" : "black"
+                            }
+                            cursor="pointer"
+                            _hover={{ color: "primary.500" }}
+                            fontWeight={600}
+                            onClick={() => {
+                                if (colorTheming === "darkCyan") {
+                                    router.push("/loading");
+                                    localStorage.setItem("sex", "feminine");
+                                    return;
+                                }
+                                router.push("/loading");
+                                localStorage.setItem("sex", "masculine");
+                            }}
+                        >
+                            {colorTheming === "darkCyan"
+                                ? "Feminino"
+                                : "Masculino"}
+                        </Text>
                         <Link href="/allProducts">
                             <Text fontWeight={600} fontSize={20}>
                                 Todos os produtos
