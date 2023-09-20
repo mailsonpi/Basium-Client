@@ -88,7 +88,11 @@ const ProductList: React.FC = () => {
             </Flex>
             <Center
                 mt={16}
-                bg="url('banner_indexmasc.svg')"
+                bg={
+                    sexSelected === "masculine"
+                        ? "url('banner_indexmasc.svg')"
+                        : "url('banner_index.svg')"
+                }
                 h="40vh"
                 flexDirection="column"
                 bgRepeat="no-repeat"

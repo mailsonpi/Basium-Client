@@ -3,13 +3,24 @@ import { Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import CardProduct from "../CardProduct";
 import { useRouter } from "next/router";
 import { novaColecao } from "@/resources/products/masculino/novaColecao";
+import { useCheckSexSelected } from "@/context";
 
 const NewCollection: React.FC = () => {
+    const { sexSelected } = useCheckSexSelected();
     const navigator = useRouter();
     return (
         <Flex justifyContent="space-around" my={10} direction="column">
-            <Heading textAlign="center">Nova Coleção</Heading>
-            <Text mt={5} textAlign="center">
+            <Heading
+                textAlign="center"
+                color={sexSelected === "masculine" ? "white" : "secondary.900"}
+            >
+                Nova Coleção
+            </Heading>
+            <Text
+                mt={5}
+                textAlign="center"
+                color={sexSelected === "masculine" ? "white" : "secondary.900"}
+            >
                 Modal Casual
             </Text>
             <Grid

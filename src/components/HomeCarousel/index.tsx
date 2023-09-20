@@ -94,7 +94,6 @@ const HomeCarousel: React.FC = () => {
 
     return (
         <Flex
-            pt={{ base: 10, md: "20" }}
             w="100%"
             flexDirection="column"
             bg={sexSelected === "masculine" ? "none" : "#EDE5D9"}
