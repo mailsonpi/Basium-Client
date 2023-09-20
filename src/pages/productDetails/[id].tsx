@@ -112,7 +112,11 @@ const ProductDetails: NextPage = () => {
                 justifyContent="center"
                 alignItems="center"
             >
-                <Flex direction={{ base: "column", md: "row" }}>
+                <Flex
+                    direction={{ base: "column", md: "row" }}
+                    justifyContent="center"
+                    w="100%"
+                >
                     <Flex direction="column" gap={3}>
                         <Image
                             objectFit="cover"
@@ -128,7 +132,7 @@ const ProductDetails: NextPage = () => {
                                 return (
                                     index < 4 && (
                                         <Image
-                                            w="25%"
+                                            w="55%"
                                             cursor="pointer"
                                             key={index}
                                             objectFit="cover"
@@ -157,7 +161,7 @@ const ProductDetails: NextPage = () => {
                             </Text>
                             <Text>/ {product?.marca}</Text>
                         </Flex>
-                        <Heading fontSize={{ base: 28, md: 40 }}>
+                        <Heading fontSize={{ base: 28, md: 40 }} maxW={"50%"}>
                             {product?.nome}
                         </Heading>
                         <Heading mb={3}>R$ {product?.price}</Heading>
