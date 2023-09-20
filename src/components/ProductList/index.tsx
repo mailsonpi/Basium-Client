@@ -11,13 +11,25 @@ import {
 import { Camisas } from "@/resources/products/masculino/camisas";
 import CardProduct from "../CardProduct";
 import { useRouter } from "next/router";
+import { useCheckSexSelected } from "@/context";
 
 const ProductList: React.FC = () => {
     const navigator = useRouter();
+    const { sexSelected } = useCheckSexSelected();
+
     return (
         <Flex justifyContent="space-around" my={10} direction="column">
-            <Heading textAlign="center">Produtos em Destaque</Heading>
-            <Text mt={5} textAlign="center">
+            <Heading
+                textAlign="center"
+                color={sexSelected === "masculine" ? "white" : "secondary.900"}
+            >
+                Produtos em Destaque
+            </Heading>
+            <Text
+                mt={5}
+                textAlign="center"
+                color={sexSelected === "masculine" ? "white" : "secondary.900"}
+            >
                 Nova Coleção com novo Design
             </Text>
             <Grid

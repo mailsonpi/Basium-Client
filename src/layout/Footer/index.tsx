@@ -1,20 +1,26 @@
 import React from "react";
 import { Flex, Image, ListItem, List, Text, Grid } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import { useCheckSexSelected } from "@/context";
 
 const Footer: React.FC = () => {
+    const { sexSelected } = useCheckSexSelected();
     const router = useRouter();
     return (
         <Flex
             flexDirection="column"
-            bg="secondary.900"
+            bg={sexSelected === "masculine" ? "secondary.900" : "#f2eade"}
             px={{ base: 10, xl: "10%" }}
             py={10}
         >
             <Image
-                src="/img/marca_cabecalho.png"
+                src={
+                    sexSelected === "feminine"
+                        ? "img/marca_cabecalho44.png"
+                        : "/img/marca_cabecalho.png"
+                }
                 alt="Logo"
-                w={40}
+                w={32}
                 mb={5}
                 mx={{ base: "auto", md: "0" }}
             />
@@ -46,7 +52,14 @@ const Footer: React.FC = () => {
                     justifyContent="center"
                     mx="auto"
                 >
-                    <List mx={{ base: "auto", sm: "none" }}>
+                    <List
+                        mx={{ base: "auto", sm: "none" }}
+                        color={
+                            sexSelected === "masculine"
+                                ? "white"
+                                : "secondary.900"
+                        }
+                    >
                         <ListItem
                             textAlign={{ base: "center", md: "left" }}
                             fontWeight={600}
@@ -89,6 +102,11 @@ const Footer: React.FC = () => {
                         </ListItem>
                     </List>
                     <List
+                        color={
+                            sexSelected === "masculine"
+                                ? "white"
+                                : "secondary.900"
+                        }
                         mx={{ base: "auto", sm: "none" }}
                         my={{ base: 10, md: 0 }}
                     >
@@ -134,7 +152,14 @@ const Footer: React.FC = () => {
                             Ajuda
                         </ListItem>
                     </List>
-                    <List mx={{ base: "auto", sm: "none" }}>
+                    <List
+                        mx={{ base: "auto", sm: "none" }}
+                        color={
+                            sexSelected === "masculine"
+                                ? "white"
+                                : "secondary.900"
+                        }
+                    >
                         <ListItem
                             fontWeight={600}
                             mb={5}
@@ -177,15 +202,32 @@ const Footer: React.FC = () => {
                 </Grid>
             </Flex>
             <Flex flexDir="column">
-                <Text fontSize={14} mt={5} as="i">
+                <Text
+                    fontSize={14}
+                    mt={5}
+                    as="i"
+                    color={
+                        sexSelected === "masculine" ? "white" : "secondary.900"
+                    }
+                >
                     Rua Cel Teixeira – Alameda Jonas Ferreira Lima (Novo
                     Calçadão), 237, sala P2, em Jacobina – Bahia
                 </Text>
-                <Text fontSize={14} as="i">
+                <Text
+                    fontSize={14}
+                    as="i"
+                    color={
+                        sexSelected === "masculine" ? "white" : "secondary.900"
+                    }
+                >
                     (75) 98154-2072
                 </Text>
             </Flex>
-            <Text textAlign={{ base: "center", md: "left" }} mt={10}>
+            <Text
+                textAlign={{ base: "center", md: "left" }}
+                mt={10}
+                color={sexSelected === "masculine" ? "white" : "secondary.900"}
+            >
                 © Estilo Basium, todos direitos reservados. 2023
             </Text>
         </Flex>
