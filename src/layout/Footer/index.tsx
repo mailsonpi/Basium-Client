@@ -25,11 +25,14 @@ const Footer: React.FC = () => {
                 mx={{ base: "auto", md: "0" }}
             />
             <Flex
-                flexWrap="wrap"
                 justifyContent="space-between"
                 flexDirection={{ base: "column", lg: "row" }}
             >
-                <Flex gap={2} mx="auto" mb={10}>
+                <Flex
+                    gap={2}
+                    mb={10}
+                    justifyContent={{ base: "center", md: "left" }}
+                >
                     <Image
                         w={{ base: 100, md: 150 }}
                         src="/MARCAGIRASSOL.svg"
@@ -174,18 +177,22 @@ const Footer: React.FC = () => {
                         >
                             App Store / Google Play
                         </ListItem>
-                        <Flex gap={3} mt={5} flexWrap="wrap" mx="auto">
+                        <Flex
+                            gap={3}
+                            mt={5}
+                            flexWrap="wrap"
+                            mx="auto"
+                            justifyContent={{ base: "center", md: "left" }}
+                        >
                             <Image
                                 rounded="md"
                                 src="/img/pay/app.jpg"
                                 alt="appstore"
-                                mx="auto"
                             />
                             <Image
                                 rounded="md"
                                 src="/img/pay/play.jpg"
                                 alt="googlePlay"
-                                mx="auto"
                             />
                         </Flex>
                         <ListItem cursor="default" mt={5}>
@@ -206,6 +213,7 @@ const Footer: React.FC = () => {
                     fontSize={14}
                     mt={5}
                     as="i"
+                    textAlign={{ base: "center", md: "left" }}
                     color={
                         sexSelected === "masculine" ? "white" : "secondary.900"
                     }
@@ -215,10 +223,12 @@ const Footer: React.FC = () => {
                 </Text>
                 <Text
                     fontSize={14}
+                    mt={1}
                     as="i"
                     color={
                         sexSelected === "masculine" ? "white" : "secondary.900"
                     }
+                    textAlign={{ base: "center", md: "left" }}
                 >
                     (75) 98154-2072
                 </Text>

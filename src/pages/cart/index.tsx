@@ -2,9 +2,10 @@ import React from "react";
 import MainLayout from "@/layout/MainLayout";
 import { Center, Flex, Text, Heading, Button } from "@chakra-ui/react";
 import Table from "@/components/Table";
-import { IPart } from "@/resources/products/masculino/camisas";
+import { useCheckSexSelected } from "@/context";
 
 const Cart = () => {
+    const { sexSelected } = useCheckSexSelected();
     const sendMessage = () => {
         if (typeof window !== "undefined") {
             const local = localStorage.getItem("cartItems");
@@ -49,11 +50,24 @@ Valor total do pedido: R$${total}.00
     };
 
     return (
-        <MainLayout navbar={{ hasNavbar: true, colorTheming: "darkCyan" }}>
-            <Flex flexDir="column" bg="secondary.900">
+        <MainLayout
+            navbar={{
+                hasNavbar: true,
+                colorTheming:
+                    sexSelected === "masculine" ? "darkCyan" : "ligthPink",
+            }}
+        >
+            <Flex
+                flexDir="column"
+                bg={sexSelected === "masculine" ? "secondary.900" : "white"}
+            >
                 <Center
                     h="40vh"
-                    bg="url('banner_produtosmasculino.svg')"
+                    bg={
+                        sexSelected === "masculine"
+                            ? "url('banner_produtosmasculino.svg')"
+                            : "url('banner_produtosfem.svg')"
+                    }
                     backgroundSize="cover"
                     backgroundPosition="center"
                     mb={5}
@@ -70,7 +84,7 @@ Valor total do pedido: R$${total}.00
                     w="max-content"
                     bg="primary.500"
                     color="white"
-                    mt={5}
+                    my={10}
                     mx="auto"
                     _hover={{
                         bg: "primary.400",

@@ -1,3 +1,4 @@
+import { useCheckSexSelected } from "@/context";
 import {
     TableContainer,
     Table as TableChakra,
@@ -33,6 +34,7 @@ interface IItems {
 
 const Table = () => {
     const [products, setProducts] = React.useState<IItems[]>([]);
+    const { sexSelected } = useCheckSexSelected();
 
     React.useEffect(() => {
         if (typeof window !== "undefined") {
@@ -60,17 +62,69 @@ const Table = () => {
     return (
         <TableContainer w="80%" mx="auto" color="white">
             <TableChakra variant="simple">
-                <Thead color="white">
+                <Thead>
                     <Tr>
-                        <Th color="white">Imagem</Th>
-                        <Th color="white">Produto</Th>
-                        <Th color="white">Valor</Th>
-                        <Th color="white">Quantidade</Th>
-                        <Th color="white">Total</Th>
-                        <Th color="white">Remover</Th>
+                        <Th
+                            color={
+                                sexSelected !== "masculine"
+                                    ? "secondary.900"
+                                    : "white"
+                            }
+                        >
+                            Imagem
+                        </Th>
+                        <Th
+                            color={
+                                sexSelected !== "masculine"
+                                    ? "secondary.900"
+                                    : "white"
+                            }
+                        >
+                            Produto
+                        </Th>
+                        <Th
+                            color={
+                                sexSelected !== "masculine"
+                                    ? "secondary.900"
+                                    : "white"
+                            }
+                        >
+                            Valor
+                        </Th>
+                        <Th
+                            color={
+                                sexSelected !== "masculine"
+                                    ? "secondary.900"
+                                    : "white"
+                            }
+                        >
+                            Quantidade
+                        </Th>
+                        <Th
+                            color={
+                                sexSelected !== "masculine"
+                                    ? "secondary.900"
+                                    : "white"
+                            }
+                        >
+                            Total
+                        </Th>
+                        <Th
+                            color={
+                                sexSelected !== "masculine"
+                                    ? "secondary.900"
+                                    : "white"
+                            }
+                        >
+                            Remover
+                        </Th>
                     </Tr>
                 </Thead>
-                <Tbody>
+                <Tbody
+                    color={
+                        sexSelected !== "masculine" ? "secondary.900" : "white"
+                    }
+                >
                     {products ? (
                         products.map((item, key) => (
                             <Tr key={key}>
@@ -82,7 +136,7 @@ const Table = () => {
                                     />
                                 </Td>
                                 <Td>{item.nome}</Td>
-                                <Td>R$ {item.price}</Td>
+                                <Td>R$ {item.price}.00</Td>
                                 <Td color="black">
                                     <NumberInput
                                         size="sm"
@@ -100,11 +154,17 @@ const Table = () => {
                                         </NumberInputStepper>
                                     </NumberInput>
                                 </Td>
-                                <Td>R$ {Number(item.quantity) * item.price}</Td>
+                                <Td>
+                                    R$ {Number(item.quantity) * item.price}.00
+                                </Td>
                                 <Td>
                                     <CloseButton
                                         onClick={() => onClickRemove(key)}
-                                        color="white"
+                                        color={
+                                            sexSelected === "feminine"
+                                                ? "secondary.900"
+                                                : "white"
+                                        }
                                     />
                                 </Td>
                             </Tr>
@@ -115,14 +175,20 @@ const Table = () => {
                 </Tbody>
                 <Tfoot>
                     <Tr>
-                        <Th color="white">
+                        <Th
+                            color={
+                                sexSelected !== "masculine"
+                                    ? "secondary.900"
+                                    : "white"
+                            }
+                        >
                             Valor total: R${" "}
                             {products.reduce(
                                 (acumulador, numero) =>
                                     acumulador +
                                     numero.price * Number(numero.quantity),
                                 0
-                            )}
+                            )}.00
                         </Th>
                     </Tr>
                 </Tfoot>
