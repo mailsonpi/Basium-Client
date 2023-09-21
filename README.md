@@ -40,13 +40,13 @@
 
 ## Uma ideia inicial de como organizar os produtos, como premissa o ID:
 
-acessórios: id (1 à 250);
-bermudas: id (251 à 1000);
-blazer: id (1001 à 1750);
-blusaSocial: id (1751 à 3250);
-calcaAlfaiataria: id (3251 à 4000);
-camisas: id (4001 à 4750);
-sapatos: id (4751 à 5500);
+- acessórios: id (1 à 250);
+- bermudas: id (251 à 1000);
+- blazer: id (1001 à 1750);
+- blusaSocial: id (1751 à 3250);
+- calcaAlfaiataria: id (3251 à 4000);
+- camisas: id (4001 à 4750);
+- sapatos: id (4751 à 5500);
 
 # ID intervalados em 750.
 
