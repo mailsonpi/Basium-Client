@@ -1,6 +1,6 @@
-### Basium
+# Basium
 
-### Guia para rodar projeto
+## Guia para rodar projeto
 - Necessário Node v16 no mínimo, desejável: Node v18;
 - Tendo Node instalado em sua máquina, agora instale as depêndencias do projeto rodando o comando "npm i" ou "yarn install" no terminal.
 - Rode o comando "npm run dev" ou "yarn dev" para executar os arquivos em sua máquina.
@@ -8,9 +8,9 @@
 
 ## Guia para adicionar produtos:
 
-## Em "src/resources/products" existem duas pastas, "masculino" e "feminino" com os arquivos dos produtos correspondentes, lá é o único lugar que será necessário mexer para renderizar o produto.
+# Em "src/resources/products" existem duas pastas, "masculino" e "feminino" com os arquivos dos produtos correspondentes, lá é o único lugar que será necessário mexer para renderizar o produto.
 
-## Para adicionar um produto é preciso manter a estrutura das propiedades, alterando apenas o valor.
+# Para adicionar um produto é preciso manter a estrutura das propiedades, alterando apenas o valor.
 o que é uma propiedade? no exemplo abaixo as propiedades seriam id, nome, price, etc. Nunca devem ser alterados, apenas o valor atribuído.
 
     {
@@ -25,11 +25,11 @@ o que é uma propiedade? no exemplo abaixo as propiedades seriam id, nome, price
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
 
-### Observações IMPORTANTES:
+## Observações IMPORTANTES:
 
 - A propiedade "price" sempre deve ser um NÚMERO INTEIRO, ou seja:
-# CERTO: 1000
-# ERRADO: 6,35 / 1000 reais
+### CERTO: 1000
+### ERRADO: 6,35 / 1000 reais
 
 - A propiedade "id" jamais deve ser repetida, é um indentificador único de cada produto. Garanta de manter o mais organizado possível a questão do ID.
 
@@ -37,9 +37,9 @@ o que é uma propiedade? no exemplo abaixo as propiedades seriam id, nome, price
 "5" é diferente de 5. Tudo lido entre aspas é reconhecido como texto, portanto prestar atenção nisso.
 
 
-### Guia de como organizar os produtos:
+## Guia de como organizar os produtos:
 
-## Uma ideia inicial de como organizar os produtos, como premissa o ID:
+### Uma ideia inicial de como organizar os produtos, como premissa o ID:
 
 - acessórios: id (1 à 250);
 - bermudas: id (251 à 1000);
@@ -49,9 +49,9 @@ o que é uma propiedade? no exemplo abaixo as propiedades seriam id, nome, price
 - camisas: id (4001 à 4750);
 - sapatos: id (4751 à 5500);
 
-# ID intervalados em 750.
+## ID intervalados em 750.
 
-## Para produtos femininos pode ser a mesma coisa, porém com numeração diferente, começando dos "20000" para evitar confusão.
+# Para produtos femininos pode ser a mesma coisa, porém com numeração diferente, começando dos "20000" para evitar confusão.
 
 
 
