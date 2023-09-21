@@ -21,7 +21,7 @@ export type category =
 
 const Blazer: IPart[] = [
     {
-        id: 701,
+        id: 20701,
         nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
@@ -32,7 +32,7 @@ const Blazer: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear.",
     },
     {
-        id: 702,
+        id: 20702,
         nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
@@ -43,7 +43,7 @@ const Blazer: IPart[] = [
             "Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 704,
+        id: 20704,
         nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
@@ -54,7 +54,7 @@ const Blazer: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 703,
+        id: 20703,
         nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
@@ -65,7 +65,7 @@ const Blazer: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 704,
+        id: 20704,
         nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
@@ -76,7 +76,7 @@ const Blazer: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 705,
+        id: 20705,
         nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
@@ -87,7 +87,7 @@ const Blazer: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 706,
+        id: 20706,
         nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,

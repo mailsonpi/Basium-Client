@@ -2,7 +2,7 @@ import { IPart } from "./camisas";
 
 const sapatos: IPart[] = [
     {
-        id: 500,
+        id: 20500,
         nome: "Tênis Nike Revolution 6 Next Nature Masculino - Preto",
         marca: "Nike",
         price: 450,
@@ -13,7 +13,7 @@ const sapatos: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },
     {
-        id: 502,
+        id: 20502,
         nome: "Tênis Infantil Nike Pico 5 PSV - Preto",
         marca: "Nike",
         price: 450,
@@ -24,7 +24,7 @@ const sapatos: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },
     {
-        id: 503,
+        id: 20503,
         nome: "Tênis Nike Metcon 8 Feminino - Preto",
         marca: "Nike",
         price: 450,
@@ -35,7 +35,7 @@ const sapatos: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },
     {
-        id: 504,
+        id: 20504,
         nome: "Tênis Nike Revolution 6 Next Nature Masculino - Preto",
         marca: "Nike",
         price: 450,
@@ -46,7 +46,7 @@ const sapatos: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },
     {
-        id: 505,
+        id: 20505,
         nome: "Tênis Nike Revolution 6 Next Nature Masculino - Preto",
         marca: "Nike",
         price: 450,

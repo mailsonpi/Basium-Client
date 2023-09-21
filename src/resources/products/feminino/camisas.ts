@@ -21,7 +21,7 @@ export type category =
 
 const Camisas: IPart[] = [
     {
-        id: 1,
+        id: 20001,
         nome: "Cartoon Astronaut T-Shirts",
         marca: "adidas",
         price: 78,
@@ -32,7 +32,7 @@ const Camisas: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear.",
     },
     {
-        id: 2,
+        id: 20002,
         nome: "Cartoon Astronaut T-Shirts",
         marca: "adidas",
         price: 78,
@@ -43,7 +43,7 @@ const Camisas: IPart[] = [
             "Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 4,
+        id: 20004,
         nome: "Cartoon Astronaut T-Shirts",
         marca: "adidas",
         price: 78,
@@ -54,7 +54,7 @@ const Camisas: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 3,
+        id: 20003,
         nome: "Cartoon Astronaut T-Shirts",
         marca: "adidas",
         price: 78,
@@ -65,7 +65,7 @@ const Camisas: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 4,
+        id: 20004,
         nome: "Cartoon Astronaut T-Shirts",
         marca: "adidas",
         price: 78,
@@ -76,7 +76,7 @@ const Camisas: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 5,
+        id: 20005,
         nome: "Cartoon Astronaut T-Shirts",
         marca: "adidas",
         price: 78,
@@ -87,7 +87,7 @@ const Camisas: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package.",
     },
     {
-        id: 6,
+        id: 20006,
         nome: "Cartoon Astronaut T-Shirts",
         marca: "adidas",
         price: 78,

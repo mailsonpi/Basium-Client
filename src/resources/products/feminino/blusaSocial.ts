@@ -2,7 +2,7 @@ import { IPart } from "./camisas";
 
 const blusaSocial: IPart[] = [
     {
-        id: 3001,
+        id: 23001,
         nome: "Camisa Polo Masculina Social Piquet Techmalhas - Preto",
         marca: "Gold",
         price: 300,
@@ -13,7 +13,7 @@ const blusaSocial: IPart[] = [
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-        id: 3001,
+        id: 23001,
         nome: "Camisa Polo Masculina Social Piquet Techmalhas - Preto",
         marca: "Gold",
         price: 100,
@@ -24,7 +24,7 @@ const blusaSocial: IPart[] = [
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-        id: 3002,
+        id: 23002,
         nome: "Camisa Polo Masculina Social Piquet Techmalhas - Preto",
         marca: "Gold",
         price: 450,
@@ -35,7 +35,7 @@ const blusaSocial: IPart[] = [
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-        id: 3003,
+        id: 23003,
         nome: "Camisa Polo Masculina Social Piquet Techmalhas - Preto",
         marca: "Gold",
         price: 1799,

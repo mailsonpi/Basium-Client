@@ -2,7 +2,7 @@ import { IPart } from "./camisas";
 
 const calcaAlfaiataria: IPart[] = [
     {
-        id: 801,
+        id: 20801,
         nome: "Calça Alfaiataria Skinny Grifle Casual Masculina - Preto",
         marca: "cyclone",
         price: 450,
@@ -13,7 +13,7 @@ const calcaAlfaiataria: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },
     {
-        id: 802,
+        id: 20802,
         nome: "Calça Alfaiataria Skinny Grifle Casual Masculina - Preto",
         marca: "cyclone",
         price: 450,
@@ -24,7 +24,7 @@ const calcaAlfaiataria: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },
     {
-        id: 803,
+        id: 20803,
         nome: "Calça Alfaiataria Skinny Grifle Casual Masculina - Preto",
         marca: "cyclone",
         price: 450,
@@ -35,7 +35,7 @@ const calcaAlfaiataria: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },
     {
-        id: 804,
+        id: 20804,
         nome: "Calça Alfaiataria Skinny Grifle Casual Masculina - Preto",
         marca: "cyclone",
         price: 450,
@@ -46,7 +46,7 @@ const calcaAlfaiataria: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },
     {
-        id: 805,
+        id: 20805,
         nome: "Calça Alfaiataria Skinny Grifle Casual Masculina - Preto",
         marca: "cyclone",
         price: 450,

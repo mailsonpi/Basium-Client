@@ -2,7 +2,7 @@ import { IPart } from "./camisas";
 
 const calcas: IPart[] = [
     {
-        id: 401,
+        id: 20401,
         nome: "Calça Jeans Skinny Grifle Casual Masculina - Preto",
         marca: "Nike",
         price: 450,
@@ -13,7 +13,7 @@ const calcas: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },
     {
-        id: 402,
+        id: 20402,
         nome: "Calça Jeans Skinny Grifle Casual Masculina - Preto",
         marca: "Nike",
         price: 450,
@@ -24,7 +24,7 @@ const calcas: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },
     {
-        id: 403,
+        id: 20403,
         nome: "Calça Jeans Skinny Grifle Casual Masculina - Preto",
         marca: "Nike",
         price: 450,
@@ -35,7 +35,7 @@ const calcas: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },
     {
-        id: 404,
+        id: 20404,
         nome: "Calça Jeans Skinny Grifle Casual Masculina - Preto",
         marca: "Nike",
         price: 450,
@@ -46,7 +46,7 @@ const calcas: IPart[] = [
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },
     {
-        id: 405,
+        id: 20405,
         nome: "Calça Jeans Skinny Grifle Casual Masculina - Preto",
         marca: "Nike",
         price: 450,
