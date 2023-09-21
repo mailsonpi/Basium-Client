@@ -110,6 +110,7 @@ const HomeCarousel: React.FC = () => {
             >
                 {banners.map((banner, index) => (
                     <Flex
+                        mt={{ base: 10, md: 3 }}
                         key={index}
                         flexDirection="column"
                         justifyContent="space-between"
