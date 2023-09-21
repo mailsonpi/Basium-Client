@@ -1,39 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+###Basium
 
-## Getting Started
+###Guia para rodar projeto
+- Necessário Node v16 no mínimo, desejável: Node v18;
+- Tendo node instalado em sua máquina, agora instale as depêndencias do projeto rodando o comando "npm i" ou "yarn install" no terminal.
+- Rode o comando "npm run dev" ou "yarn dev" para executar os arquivos em sua máquina.
+- Entre em "http://localhost:3000/" para acessar o projeto.
 
-First, run the development server:
+##Guia para adicionar produtos:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+##Em "src/resources/products" existem duas pastas, "masculino" e "feminino" com os arquivos dos produtos correspondentes, lá é o único lugar que será necessário mexer para renderizar o produto.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##Para adicionar um produto é preciso manter a estrutura das propiedades, alterando apenas o valor.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+    {
+        id: 200001, 
+        nome: "Anel de Ouro 18k Infinito com Zircônia an38325",
+        marca: "Gold",
+        price: 1500,
+        image: "https://joiasgold.vteximg.com.br/arquivos/ids/235910-250-250/anel-ouro-dezoito-kilates-infinito-zirconia-joiasgold.jpg?v=638068103745830000",
+        tamanhos: ["7", "9", "11"],
+        category: ["Acessórios"],
+        description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    },
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+###Observações IMPORTANTES:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- A propiedade "price" sempre deve ser um NÚMERO INTEIRO, ou seja:
+#CERTO: 1000
+#ERRADO: 6,35 / 1000 reais
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- A propiedade "id" jamais deve ser repetida, é um indentificador único de cada produto. Garanta de manter o mais organizado possível a questão do ID.
 
-## Learn More
+- Obrigatório seguir a sintaxe desse modelo, levando em consideração aspas, colxetes, até mesmo vírgulas e números inteiros. Não alterar o tipo de dado, em outras palavras, não colocar texto onde existe número.
+"5" é diferente de 5. Tudo lido entre aspas é reconhecido como texto, portanto prestar atenção nisso.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+###Guia de como organizar os produtos:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+##Uma ideia inicial de como organizar os produtos, como premissa o ID:
 
-## Deploy on Vercel
+acessórios: id (1 à 250);
+bermudas: id (251 à 1000);
+blazer: id (1001 à 1750);
+blusaSocial: id (1751 à 3250);
+calcaAlfaiataria: id (3251 à 4000);
+camisas: id (4001 à 4750);
+sapatos: id (4751 à 5500);
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#ID intervalados em 750.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# Basium-Client
+##Para produtos femininos pode ser a mesma coisa, porém com numeração diferente, começando dos "20000" para evitar confusão.
+
+
+
+
