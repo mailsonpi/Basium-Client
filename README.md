@@ -2,7 +2,7 @@
 
 ### Guia para rodar projeto
 - Necessário Node v16 no mínimo, desejável: Node v18;
-- Tendo node instalado em sua máquina, agora instale as depêndencias do projeto rodando o comando "npm i" ou "yarn install" no terminal.
+- Tendo Node instalado em sua máquina, agora instale as depêndencias do projeto rodando o comando "npm i" ou "yarn install" no terminal.
 - Rode o comando "npm run dev" ou "yarn dev" para executar os arquivos em sua máquina.
 - Entre em "http://localhost:3000/" para acessar o projeto.
 
