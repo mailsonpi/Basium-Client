@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
             <Image
                 src={
                     sexSelected === "feminine"
-                        ? "img/marca_cabecalho44.png"
+                        ? "/img/marca_cabecalho44.png"
                         : "/img/marca_cabecalho.png"
                 }
                 alt="Logo"

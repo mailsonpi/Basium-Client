@@ -4,6 +4,7 @@ import {
     BsFillArrowLeftCircleFill,
     BsFillArrowRightCircleFill,
 } from "react-icons/bs";
+import { useCheckSexSelected } from "@/context";
 
 interface IProps {
     prev: () => void;
@@ -12,21 +13,24 @@ interface IProps {
 }
 
 const Pagination: React.FC<IProps> = ({ prev, next, page }) => {
+    const { sexSelected } = useCheckSexSelected();
     return (
-        <Flex gap={3} justifyContent="center" alignItems="center" mt={10}>
+        <Flex gap={3} justifyContent="center" alignItems="center" my={10}>
             <Button
                 onClick={prev}
                 bg="transparent"
-                color="white"
+                color={sexSelected === "masculine" ? "white" : "primary.400"}
                 _hover={{ bg: "transparent", color: "primary.400" }}
             >
                 <BsFillArrowLeftCircleFill size={25} />
             </Button>
-            <Text>{page}</Text>
+            <Text color={sexSelected === "masculine" ? "white" : "primary.400"}>
+                {page}
+            </Text>
             <Button
                 bg="transparent"
                 onClick={next}
-                color="white"
+                color={sexSelected === "masculine" ? "white" : "primary.400"}
                 _hover={{ bg: "transparent", color: "primary.400" }}
             >
                 <BsFillArrowRightCircleFill size={25} />

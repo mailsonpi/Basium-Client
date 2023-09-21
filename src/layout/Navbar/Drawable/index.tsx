@@ -49,13 +49,13 @@ const Drawable: React.FC<IProps> = ({ colorTheming }) => {
                 <Box
                     color="black"
                     cursor="pointer"
-                    onClick={() => router.push("/")}
+                    onClick={() => router.push("/home")}
                 >
                     <Image
                         w={36}
                         src={
                             colorTheming !== "darkCyan"
-                                ? "img/marca_cabecalho44.png"
+                                ? "/img/marca_cabecalho44.png"
                                 : "/img/marca_cabecalho.png"
                         }
                         alt="Logo"
@@ -82,10 +82,16 @@ const Drawable: React.FC<IProps> = ({ colorTheming }) => {
             </Flex>
             <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
                 <DrawerOverlay />
-                <DrawerContent bg="#E3E6F3">
+                <DrawerContent
+                    bg={
+                        colorTheming === "darkCyan"
+                            ? "primary.400"
+                            : "secondary.900"
+                    }
+                >
                     <DrawerCloseButton />
                     <DrawerBody mt={28} gap={5} display="flex" flexDir="column">
-                        <Link href="/">
+                        <Link href="/home">
                             <Text fontWeight={600} fontSize={20}>
                                 Início
                             </Text>

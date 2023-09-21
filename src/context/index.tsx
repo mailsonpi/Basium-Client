@@ -20,9 +20,7 @@ const MyContext = createContext<ContextType | undefined>(undefined);
 export const useCheckSexSelected = () => {
     const context = useContext(MyContext);
     if (context === undefined) {
-        throw new Error(
-            "useCheckSexSelected deve ser usado dentro de um CheckSexSelected"
-        );
+        throw new Error("Context not found");
     }
     return context;
 };

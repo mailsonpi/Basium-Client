@@ -32,7 +32,7 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                 <Image
                     src={
                         colorTheming !== "darkCyan"
-                            ? "img/marca_cabecalho44.png"
+                            ? "/img/marca_cabecalho44.png"
                             : "/img/marca_cabecalho.png"
                     }
                     alt="Logo"
@@ -44,7 +44,7 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                         cursor="pointer"
                         _hover={{ color: "primary.500" }}
                         fontWeight={600}
-                        onClick={() => router.push("/")}
+                        onClick={() => router.push("/home")}
                     >
                         Início
                     </Text>

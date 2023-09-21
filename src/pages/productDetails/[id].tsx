@@ -25,8 +25,10 @@ import { acessorio } from "@/resources/products/masculino/acessorio";
 import { bermudas } from "@/resources/products/masculino/bermudas";
 import { calcaAlfaiataria } from "@/resources/products/masculino/calcaAlfaiataria";
 import { Blazer } from "@/resources/products/masculino/blazer";
+import { useCheckSexSelected } from "@/context";
 
 const ProductDetails: NextPage = () => {
+    const { sexSelected } = useCheckSexSelected();
     const [product, setProduct] = React.useState<IPart>();
     const [quantity, setQuantity] = React.useState(1);
     const [size, setSize] = React.useState("P");
@@ -103,10 +105,18 @@ const ProductDetails: NextPage = () => {
     }, [id, product]);
 
     return (
-        <MainLayout navbar={{ hasNavbar: true, colorTheming: "darkCyan" }}>
+        <MainLayout
+            navbar={{
+                hasNavbar: true,
+                colorTheming:
+                    sexSelected === "masculine" ? "darkCyan" : "ligthPink",
+            }}
+        >
             <Flex
                 direction="column"
-                bgColor="secondary.900"
+                bgColor={
+                    sexSelected === "masculine" ? "secondary.900" : "white"
+                }
                 bgPosition="cover"
                 py={10}
                 justifyContent="center"
@@ -149,7 +159,7 @@ const ProductDetails: NextPage = () => {
                         <Flex>
                             <Text
                                 fontWeight={600}
-                                color="black"
+                                color={"black"}
                                 mb={5}
                                 mr={2}
                                 cursor="pointer"
@@ -159,12 +169,37 @@ const ProductDetails: NextPage = () => {
                             >
                                 Home
                             </Text>
-                            <Text>/ {product?.marca}</Text>
+                            <Text
+                                color={
+                                    sexSelected === "masculine"
+                                        ? "white"
+                                        : "secondary.900"
+                                }
+                            >
+                                / {product?.marca}
+                            </Text>
                         </Flex>
-                        <Heading fontSize={{ base: 28, md: 40 }} maxW={"50%"}>
+                        <Heading
+                            fontSize={{ base: 28, md: 40 }}
+                            maxW={"50%"}
+                            color={
+                                sexSelected === "masculine"
+                                    ? "white"
+                                    : "secondary.900"
+                            }
+                        >
                             {product?.nome}
                         </Heading>
-                        <Heading mb={3}>R$ {product?.price}</Heading>
+                        <Heading
+                            mb={3}
+                            color={
+                                sexSelected === "masculine"
+                                    ? "white"
+                                    : "secondary.900"
+                            }
+                        >
+                            R$ {product?.price}
+                        </Heading>
                         <Select
                             w="max-content"
                             onChange={(e) => setSize(e.target.value)}
@@ -195,7 +230,11 @@ const ProductDetails: NextPage = () => {
                             </NumberInput>
                             <Button
                                 h="45px"
-                                color="white"
+                                color={
+                                    sexSelected === "masculine"
+                                        ? "white"
+                                        : "secondary.900"
+                                }
                                 bg="green.500"
                                 onClick={() => addProduct()}
                             >

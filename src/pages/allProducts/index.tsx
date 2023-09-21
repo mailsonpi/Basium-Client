@@ -18,8 +18,10 @@ import { acessorio } from "@/resources/products/masculino/acessorio";
 import { bermudas } from "@/resources/products/masculino/bermudas";
 import { calcaAlfaiataria } from "@/resources/products/masculino/calcaAlfaiataria";
 import { Blazer } from "@/resources/products/masculino/blazer";
+import { useCheckSexSelected } from "@/context";
 
 const AllProducts: NextPage = () => {
+    const { sexSelected } = useCheckSexSelected();
     const [allProduct, setAllProduct] = React.useState<IPart[]>([]);
     const [page, setPage] = React.useState(1);
     const [itemPerPage, setItemPerPage] = React.useState(8);
@@ -40,7 +42,7 @@ const AllProducts: NextPage = () => {
         );
         setAllProduct(items);
     }, []);
-
+    console.log("oi");
     const indexLast = page * itemPerPage;
     const indexFirst = indexLast - itemPerPage;
     let productsList = allProduct.slice(indexFirst, indexLast);
@@ -72,15 +74,27 @@ const AllProducts: NextPage = () => {
     };
 
     return (
-        <MainLayout navbar={{ colorTheming: "darkCyan", hasNavbar: true }}>
+        <MainLayout
+            navbar={{
+                colorTheming:
+                    sexSelected === "masculine" ? "darkCyan" : "ligthPink",
+                hasNavbar: true,
+            }}
+        >
             <Flex
-                bgColor="secondary.900"
+                bgColor={
+                    sexSelected === "masculine" ? "secondary.900" : "white"
+                }
                 bgPosition="cover"
                 flexDirection="column"
             >
                 <Center
                     h="40vh"
-                    bg="url('banner_produtosmasculino.svg')"
+                    bg={
+                        sexSelected === "masculine"
+                            ? "url('banner_produtosmasculino.svg')"
+                            : "url('banner_produtosfem.svg')"
+                    }
                     backgroundSize="cover"
                     backgroundPosition="center"
                     mb={5}
