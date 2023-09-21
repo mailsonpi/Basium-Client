@@ -188,7 +188,8 @@ const Table = () => {
                                     acumulador +
                                     numero.price * Number(numero.quantity),
                                 0
-                            )}.00
+                            )}
+                            .00
                         </Th>
                     </Tr>
                 </Tfoot>
