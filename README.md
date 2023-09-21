@@ -11,6 +11,7 @@
 ## Em "src/resources/products" existem duas pastas, "masculino" e "feminino" com os arquivos dos produtos correspondentes, lá é o único lugar que será necessário mexer para renderizar o produto.
 
 ## Para adicionar um produto é preciso manter a estrutura das propiedades, alterando apenas o valor.
+o que é uma propiedade? no exemplo abaixo as propiedades seriam id, nome, price, etc. Nunca devem ser alterados, apenas o valor atribuído.
 
     {
         id: 200001, 
