@@ -1,24 +1,15 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef } from "react";
 import { NextPage } from "next";
 import { Flex, Heading, Center, Text, Image, Grid } from "@chakra-ui/react";
 import MainLayout from "@/layout/MainLayout";
-import {
-    IPart,
-    Camisas,
-    category,
-} from "@/resources/products/masculino/camisas";
-import { novaColecao } from "@/resources/products/masculino/novaColecao";
+import { IPart, category } from "@/resources/products/masculino/camisas";
 import CardProduct from "@/components/CardProduct";
 import { useRouter } from "next/router";
-import { sapatos } from "@/resources/products/masculino/sapatos";
-import { calcas } from "@/resources/products/masculino/calcas";
 import Pagination from "@/components/Pagination";
-import { blusaSocial } from "@/resources/products/masculino/blusaSocial";
-import { acessorio } from "@/resources/products/masculino/acessorio";
-import { bermudas } from "@/resources/products/masculino/bermudas";
-import { calcaAlfaiataria } from "@/resources/products/masculino/calcaAlfaiataria";
-import { Blazer } from "@/resources/products/masculino/blazer";
 import { useCheckSexSelected } from "@/context";
+import { masculineProducts } from "@/resources/products/masculino";
+import { feminineProducts } from "@/resources/products/feminino";
 
 const AllProducts: NextPage = () => {
     const { sexSelected } = useCheckSexSelected();
@@ -29,20 +20,15 @@ const AllProducts: NextPage = () => {
     const ref = useRef<HTMLImageElement | null>(null);
     const router = useRouter();
 
+    const typeOfProducts =
+        sexSelected === "masculine" ? masculineProducts : feminineProducts;
+
     React.useEffect(() => {
-        const items = Camisas.concat(
-            novaColecao,
-            sapatos,
-            calcas,
-            blusaSocial,
-            acessorio,
-            bermudas,
-            calcaAlfaiataria,
-            Blazer
-        );
+        const items: IPart[] = [];
+        typeOfProducts.map((item) => items.push(...item));
         setAllProduct(items);
     }, []);
-    console.log("oi");
+
     const indexLast = page * itemPerPage;
     const indexFirst = indexLast - itemPerPage;
     let productsList = allProduct.slice(indexFirst, indexLast);
