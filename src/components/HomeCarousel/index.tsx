@@ -112,6 +112,7 @@ const HomeCarousel: React.FC = () => {
                     <Flex
                         mt={{ base: 10, md: 3 }}
                         key={index}
+                        pb={4}
                         flexDirection="column"
                         justifyContent="space-between"
                         bgImage={{ base: "none", md: banner.url }}
