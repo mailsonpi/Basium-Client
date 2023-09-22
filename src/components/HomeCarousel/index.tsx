@@ -112,14 +112,13 @@ const HomeCarousel: React.FC = () => {
                     <Flex
                         mt={{ base: 10, md: 3 }}
                         key={index}
-                        pb={4}
                         flexDirection="column"
                         justifyContent="space-between"
                         bgImage={{ base: "none", md: banner.url }}
                         mx="auto"
                         bgRepeat="no-repeat"
                         bgPosition="right"
-                        h={{ base: "40vh", md: "90vh" }}
+                        h={{ base: "45vh", md: "90vh" }}
                     >
                         <Flex
                             direction="column"
@@ -171,7 +170,7 @@ const HomeCarousel: React.FC = () => {
                                         bgPosition: "center",
                                     }}
                                     w="200px"
-                                    my={5}
+                                    mt={5}
                                     fontSize="15px"
                                     h="50px"
                                     color="white"

@@ -47,7 +47,7 @@ const DynamicModal: React.FC<IProps> = ({
                     backdropFilter="blur(10px) hue-rotate(90deg)"
                 />
                 <ModalContent
-                    mt={10}
+                    mt={40}
                     mx={3}
                     bg={
                         sexSelected === "masculine"
