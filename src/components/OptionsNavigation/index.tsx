@@ -11,6 +11,7 @@ const OptionsNavigation: React.FC = () => {
                     "Frete grátis em compras acima de 300,00 reais para todo país."
                 }
                 image={"/foto_fretegratis.png"}
+                message={"Olá, gostaria de falar sobre o frete grátis."}
             >
                 <Image
                     cursor="pointer"
@@ -24,6 +25,9 @@ const OptionsNavigation: React.FC = () => {
                 />
             </DynamicModal>
             <DynamicModal
+                message={
+                    "Olá, gostaria de tirar algumas dúvidas sobre a plataforma *Basium*."
+                }
                 title={"Suporte"}
                 description={
                     "Para termos uma relação próxima aos nossos clientes e sanar qualquer dúvida, você pode entrar em contato pelo WhatsApp para melhor suporte."
@@ -42,6 +46,9 @@ const OptionsNavigation: React.FC = () => {
                 />
             </DynamicModal>
             <DynamicModal
+                message={
+                    "Olá, gostaria de saber sobre como funciona as revendas!"
+                }
                 title={"Revenda"}
                 description={
                     "Nossa condição especial para ser uma revendedora Basium é simples e lhe garante uma renda extra de até 30% de comissão. Gostaria de saber mais detalhes sobre?"
@@ -60,6 +67,7 @@ const OptionsNavigation: React.FC = () => {
                 />
             </DynamicModal>
             <DynamicModal
+                message={"Olá, gostaria de entender mais sobre o parcelamento."}
                 title={"Parcelamento"}
                 description={"Parcelamento em até 6x no cartão"}
                 image={"/foto_parcelamento.png"}

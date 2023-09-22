@@ -1,4 +1,5 @@
 import { useCheckSexSelected } from "@/context";
+import { whatsappNumber } from "@/resources/whatsappNumber";
 import {
     Button,
     ModalContent,
@@ -19,6 +20,7 @@ interface IProps {
     title: string;
     description: string;
     image: string;
+    message: string;
 }
 
 const DynamicModal: React.FC<IProps> = ({
@@ -26,9 +28,16 @@ const DynamicModal: React.FC<IProps> = ({
     title,
     description,
     image,
+    message,
 }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { sexSelected } = useCheckSexSelected();
+    const sendMessage = () => {
+        const url = `whatsapp://send?phone=${whatsappNumber}&text=${encodeURIComponent(
+            message
+        )}`;
+        window.location.href = url;
+    };
     return (
         <>
             <Box onClick={onOpen}>{children}</Box>
@@ -101,6 +110,7 @@ const DynamicModal: React.FC<IProps> = ({
                                 background: "transparent",
                                 color: "primary.500",
                             }}
+                            onClick={() => sendMessage()}
                         >
                             Entre em contato!
                         </Button>

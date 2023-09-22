@@ -1,10 +1,10 @@
 import React from "react";
 import MainLayout from "@/layout/MainLayout";
 import { Center, Flex, Text, Heading, Button } from "@chakra-ui/react";
-import Table from "@/components/Table";
 import { useCheckSexSelected } from "@/context";
 import { Counter } from "@/components/Counter";
 import Image from "next/image";
+import { whatsappNumber } from "@/resources/whatsappNumber";
 
 const Cart = () => {
     const { sexSelected } = useCheckSexSelected();
@@ -42,8 +42,7 @@ Valor Total: R$${item.price * item.quantity}.00
 Valor total do pedido: R$${total}.00
                 `;
 
-                const numeroTelefone = "+5575981986136";
-                const url = `whatsapp://send?phone=${numeroTelefone}&text=${encodeURIComponent(
+                const url = `whatsapp://send?phone=${whatsappNumber}&text=${encodeURIComponent(
                     message
                 )}`;
                 window.location.href = url;
