@@ -4,7 +4,6 @@ export default function Document() {
     return (
         <Html lang="ptBR">
             <Head>
-                <title>Basium</title>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link

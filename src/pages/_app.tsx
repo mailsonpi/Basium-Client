@@ -3,10 +3,14 @@ import type { AppProps } from "next/app";
 import { theme } from "@/themes";
 import Fonts from "@/components/GlobalFont";
 import { CheckSexSelected } from "@/context";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <ChakraProvider theme={theme}>
+            <Head>
+                <title>Basium</title>
+            </Head>
             <Fonts />
             <CheckSexSelected>
                 <Component {...pageProps} />
