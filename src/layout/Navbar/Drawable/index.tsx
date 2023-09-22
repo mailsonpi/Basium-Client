@@ -24,6 +24,21 @@ interface IProps {
 const Drawable: React.FC<IProps> = ({ colorTheming }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const router = useRouter();
+    const rotaAtual = router.pathname;
+
+    const switchColor = (route: string) => {
+        if (rotaAtual === route) {
+            return "primary.500";
+        } else if (colorTheming === "darkCyan") {
+            return "white";
+        }
+
+        if (colorTheming === "ligthPink") {
+            return "white";
+        } else if (rotaAtual === route) {
+            return "secondary.900";
+        }
+    };
 
     return (
         <>
@@ -92,14 +107,16 @@ const Drawable: React.FC<IProps> = ({ colorTheming }) => {
                     <DrawerCloseButton />
                     <DrawerBody mt={28} gap={5} display="flex" flexDir="column">
                         <Link href="/home">
-                            <Text fontWeight={600} fontSize={20}>
+                            <Text
+                                fontWeight={600}
+                                fontSize={20}
+                                color={switchColor("/home")}
+                            >
                                 Início
                             </Text>
                         </Link>
                         <Text
-                            color={
-                                colorTheming === "darkCyan" ? "white" : "black"
-                            }
+                            color="white"
                             cursor="pointer"
                             _hover={{ color: "primary.500" }}
                             fontWeight={600}
@@ -118,17 +135,29 @@ const Drawable: React.FC<IProps> = ({ colorTheming }) => {
                                 : "Masculino"}
                         </Text>
                         <Link href="/allProducts">
-                            <Text fontWeight={600} fontSize={20}>
+                            <Text
+                                fontWeight={600}
+                                fontSize={20}
+                                color={switchColor("/allProducts")}
+                            >
                                 Todos os produtos
                             </Text>
                         </Link>
                         <Link href="/tip">
-                            <Text fontWeight={600} fontSize={20}>
+                            <Text
+                                fontWeight={600}
+                                fontSize={20}
+                                color={switchColor("/tip")}
+                            >
                                 Dicas
                             </Text>
                         </Link>
                         <Link href="/about">
-                            <Text fontWeight={600} fontSize={20}>
+                            <Text
+                                fontWeight={600}
+                                fontSize={20}
+                                color={switchColor("/about")}
+                            >
                                 Sobre
                             </Text>
                         </Link>

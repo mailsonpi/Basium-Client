@@ -19,8 +19,15 @@ const Pagination: React.FC<IProps> = ({ prev, next, page }) => {
             <Button
                 onClick={prev}
                 bg="transparent"
+                isDisabled={page === 1}
                 color={sexSelected === "masculine" ? "white" : "primary.400"}
-                _hover={{ bg: "transparent", color: "primary.400" }}
+                _hover={{
+                    bg: "transparent",
+                    color:
+                        sexSelected === "masculine"
+                            ? "primary.400"
+                            : "secondary.900",
+                }}
             >
                 <BsFillArrowLeftCircleFill size={25} />
             </Button>
@@ -31,7 +38,13 @@ const Pagination: React.FC<IProps> = ({ prev, next, page }) => {
                 bg="transparent"
                 onClick={next}
                 color={sexSelected === "masculine" ? "white" : "primary.400"}
-                _hover={{ bg: "transparent", color: "primary.400" }}
+                _hover={{
+                    bg: "transparent",
+                    color:
+                        sexSelected === "masculine"
+                            ? "primary.400"
+                            : "secondary.900",
+                }}
             >
                 <BsFillArrowRightCircleFill size={25} />
             </Button>

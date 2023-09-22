@@ -9,6 +9,22 @@ interface IProps {
 
 const Navbar: React.FC<IProps> = ({ colorTheming }) => {
     const router = useRouter();
+    const rotaAtual = router.pathname;
+
+    const switchColor = (route: string) => {
+        if (rotaAtual === route) {
+            return "primary.500";
+        } else if (colorTheming === "darkCyan") {
+            return "white";
+        }
+
+        if (colorTheming === "ligthPink") {
+            return "secondary.900";
+        } else if (rotaAtual === route) {
+            return "white";
+        }
+    };
+
     return (
         <Flex
             position="fixed"
@@ -40,7 +56,7 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                 />
                 <Flex gap={10} alignItems="center">
                     <Text
-                        color={colorTheming === "darkCyan" ? "white" : "black"}
+                        color={switchColor("/home")}
                         cursor="pointer"
                         _hover={{ color: "primary.500" }}
                         fontWeight={600}
@@ -66,7 +82,7 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                         {colorTheming === "darkCyan" ? "Feminino" : "Masculino"}
                     </Text>
                     <Text
-                        color={colorTheming === "darkCyan" ? "white" : "black"}
+                        color={switchColor("/allProducts")}
                         cursor="pointer"
                         _hover={{ color: "primary.500" }}
                         fontWeight={600}
@@ -84,7 +100,7 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                         Dicas
                     </Text>
                     <Text
-                        color={colorTheming === "darkCyan" ? "white" : "black"}
+                        color={switchColor("/about")}
                         cursor="pointer"
                         _hover={{ color: "primary.500" }}
                         fontWeight={600}
@@ -102,7 +118,7 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                         Contato
                     </Text>
                     <Box
-                        color={colorTheming === "darkCyan" ? "white" : "black"}
+                        color={switchColor("/cart")}
                         cursor="pointer"
                         transition=".4s"
                         onClick={() => router.push("/cart")}
