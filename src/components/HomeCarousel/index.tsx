@@ -171,7 +171,7 @@ const HomeCarousel: React.FC = () => {
                                         bgPosition: "center",
                                     }}
                                     w="200px"
-                                    mt={5}
+                                    my={5}
                                     fontSize="15px"
                                     h="50px"
                                     color="white"
