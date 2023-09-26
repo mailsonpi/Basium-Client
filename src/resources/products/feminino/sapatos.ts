@@ -1,4 +1,4 @@
-import { IPart } from "./camisas";
+import { IPart } from "../masculino/camisas";
 
 const sapatos: IPart[] = [
     {
