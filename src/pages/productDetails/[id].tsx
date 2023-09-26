@@ -29,6 +29,8 @@ import { Blazer } from "@/resources/products/masculino/blazer";
 import { useCheckSexSelected } from "@/context";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { masculineProducts } from "@/resources/products/masculino";
+import { feminineProducts } from "@/resources/products/feminino";
 
 const ProductDetails: NextPage = () => {
     const { sexSelected } = useCheckSexSelected();
@@ -39,19 +41,13 @@ const ProductDetails: NextPage = () => {
     const router = useRouter();
     const { id } = router.query;
     const toast = useToast();
+    const typeOfProducts =
+        sexSelected === "masculine" ? masculineProducts : feminineProducts;
 
     const getProduct = () => {
-        const allProducts = Camisas.concat(
-            novaColecao,
-            sapatos,
-            calcas,
-            blusaSocial,
-            acessorio,
-            bermudas,
-            calcaAlfaiataria,
-            Blazer
-        );
-        const camisa = allProducts.find((item: any) => item.id === Number(id));
+        const items: IPart[] = [];
+        typeOfProducts.map((item) => items.push(...item));
+        const camisa = items.find((item: any) => item.id === Number(id));
         setProduct(camisa);
     };
     const addProduct = async () => {
