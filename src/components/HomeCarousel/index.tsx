@@ -56,9 +56,8 @@ const HomeCarousel: React.FC = () => {
     const bannersFeminine = [
         {
             url: "url('/fullbanner_roupas4.svg')",
-            text1: "Grandes Ofertas",
             text2: "Roupas a partir de",
-            text3: "R$ 79,90",
+            text3: "R$ 114,00",
             off: {
                 text1: "Parcelas de 6x sem juros",
                 text2: "Enviamos para todo Brasil",
@@ -67,7 +66,6 @@ const HomeCarousel: React.FC = () => {
         },
         {
             url: "url('/fullbanner_acessorios4.svg')",
-            text1: "Grandes Ofertas",
             text2: "Acessórios a partir de",
             text3: "R$ 34,99",
             off: {
@@ -78,9 +76,8 @@ const HomeCarousel: React.FC = () => {
         },
         {
             url: "url('/fullbanner_calcados11.svg')",
-            text1: "Grandes Ofertas",
-            text2: "Seu estilo com",
-            text3: "toque de classe!",
+            text2: "Calçados a partir de",
+            text3: "R$ 179,00",
             off: {
                 text1: "Parcelas de 6x sem juros",
                 text2: "Enviamos para todo Brasil",
@@ -126,12 +123,6 @@ const HomeCarousel: React.FC = () => {
                             ml="10%"
                         >
                             <Text
-                                fontSize={{ base: 28, md: 32 }}
-                                fontWeight={600}
-                            >
-                                {banner.text1}
-                            </Text>
-                            <Text
                                 fontSize={{ base: 44, md: 60 }}
                                 color="primary.500"
                                 fontWeight={600}
@@ -170,7 +161,7 @@ const HomeCarousel: React.FC = () => {
                                         bgPosition: "center",
                                     }}
                                     w="200px"
-                                    mt={5}
+                                    mt={20}
                                     fontSize="15px"
                                     h="50px"
                                     color="white"

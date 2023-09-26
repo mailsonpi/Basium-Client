@@ -35,7 +35,7 @@ const InitialPage: NextPage = () => {
                     fontSize={{ base: 60, md: 80 }}
                     textAlign="center"
                 >
-                    Qual Genero?
+                    Qual Gênero?
                 </Heading>
                 <Button
                     onClick={() => onClick(false)}
