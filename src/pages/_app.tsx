@@ -10,6 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <ChakraProvider theme={theme}>
             <Head>
                 <title>Basium</title>
+                <link rel="shortcut icon" href="/loading.logo.svg" />
             </Head>
             <Fonts />
             <CheckSexSelected>

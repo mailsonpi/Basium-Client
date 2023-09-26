@@ -35,15 +35,19 @@ const NewCollection: React.FC = () => {
                 gap={10}
                 mt={14}
             >
-                {novaColecao.map((item, key) => (
-                    <CardProduct
-                        onClick={() =>
-                            navigator.push(`productDetails/${item.id}`)
-                        }
-                        product={item}
-                        key={key}
-                    />
-                ))}
+                {novaColecao.map((item, key) => {
+                    return (
+                        key < 4 && (
+                            <CardProduct
+                                onClick={() =>
+                                    navigator.push(`productDetails/${item.id}`)
+                                }
+                                product={item}
+                                key={key}
+                            />
+                        )
+                    );
+                })}
             </Grid>
             <Button
                 onClick={() => navigator.push("/allProducts")}
