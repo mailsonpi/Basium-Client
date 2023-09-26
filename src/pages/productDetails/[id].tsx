@@ -35,6 +35,7 @@ const ProductDetails: NextPage = () => {
     const [product, setProduct] = React.useState<IPart>();
     const [quantity, setQuantity] = React.useState(1);
     const [size, setSize] = React.useState("P");
+    const [cor, setCor] = React.useState("");
     const router = useRouter();
     const { id } = router.query;
     const toast = useToast();
@@ -70,6 +71,7 @@ const ProductDetails: NextPage = () => {
                     ...product,
                     quantity,
                     size,
+                    cor,
                 });
                 window.localStorage.setItem(
                     "cartItems",
@@ -196,19 +198,36 @@ const ProductDetails: NextPage = () => {
                         >
                             R$ {product?.price}
                         </Heading>
-                        <Select
-                            w="max-content"
-                            onChange={(e) => setSize(e.target.value)}
-                        >
-                            {product?.tamanhos.map((item) => (
-                                <option
-                                    key={item}
-                                    style={{ textAlign: "center" }}
+                        <Flex gap={3}>
+                            <Select
+                                w="max-content"
+                                onChange={(e) => setSize(e.target.value)}
+                            >
+                                {product?.tamanhos.map((item) => (
+                                    <option
+                                        key={item}
+                                        style={{ textAlign: "center" }}
+                                    >
+                                        {item}
+                                    </option>
+                                ))}
+                            </Select>
+                            {product?.cores && (
+                                <Select
+                                    w="max-content"
+                                    onChange={(e) => setCor(e.target.value)}
                                 >
-                                    {item}
-                                </option>
-                            ))}
-                        </Select>
+                                    {product?.cores?.map((item) => (
+                                        <option
+                                            key={item}
+                                            style={{ textAlign: "center" }}
+                                        >
+                                            {item}
+                                        </option>
+                                    ))}
+                                </Select>
+                            )}
+                        </Flex>
                         <Flex mt={5} gap={4}>
                             <NumberInput
                                 size="lg"

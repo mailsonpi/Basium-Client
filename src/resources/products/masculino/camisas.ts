@@ -4,6 +4,7 @@ export interface IPart {
     marca: string;
     price: number;
     image: string[];
+    cores?: string[] | null;
     description: string;
     tamanhos: string[];
     category: string[];
@@ -31,6 +32,7 @@ const Camisas: IPart[] = [
             "/img/products/f3.jpg",
         ],
         tamanhos: ["P", "M"],
+        cores: ["Preta", "Azul", "Vermelho"],
         category: ["Camisas", "T-Shirts"],
         description:
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear.",

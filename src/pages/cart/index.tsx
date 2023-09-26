@@ -29,6 +29,8 @@ Produto: ${item.nome}
 
 Tamanho: ${item.size}
 
+Cor: ${item.cor}
+
 Quantidade: ${item.quantity}
 
 Preço unitário: R$${item.price}.00

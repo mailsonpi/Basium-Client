@@ -1,13 +1,4 @@
-export interface IPart {
-    nome: string;
-    id: number;
-    marca: string;
-    price: number;
-    image: string[];
-    description: string;
-    tamanhos: string[];
-    category: string[];
-}
+import { IPart } from "../masculino/camisas";
 
 export type category =
     | "Acessórios"
