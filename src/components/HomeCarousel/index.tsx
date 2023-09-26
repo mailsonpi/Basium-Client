@@ -57,7 +57,7 @@ const HomeCarousel: React.FC = () => {
         {
             url: "url('/fullbanner_roupas4.svg')",
             text2: "Roupas a partir de",
-            text3: "R$ 114,00",
+            text3: "R$ 99,90",
             off: {
                 text1: "Parcelas de 6x sem juros",
                 text2: "Enviamos para todo Brasil",
@@ -69,19 +69,19 @@ const HomeCarousel: React.FC = () => {
             text2: "Acessórios a partir de",
             text3: "R$ 34,99",
             off: {
-                text1: "Parcelas de 6x sem juros",
-                text2: "Enviamos para todo Brasil",
-                text3: "Desconto de 10% em compras no pix",
+                text1: "",
+                text2: "",
+                text3: "",
             },
         },
         {
             url: "url('/fullbanner_calcados11.svg')",
             text2: "Calçados a partir de",
-            text3: "R$ 179,00",
+            text3: "R$ 179,90",
             off: {
-                text1: "Parcelas de 6x sem juros",
-                text2: "Enviamos para todo Brasil",
-                text3: "Desconto de 10% em compras no pix",
+                text1: "",
+                text2: "",
+                text3: "",
             },
         },
     ];
