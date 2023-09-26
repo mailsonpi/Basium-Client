@@ -57,5 +57,24 @@ export const Select: ComponentStyleConfig = {
                 },
             },
         }),
+        cart: (props) => ({
+            ...theme.components.Input.variants?.outline(props),
+            field: {
+                h: "46px",
+                rounded: "lg",
+                borderWidth: 1,
+                borderColor: "red",
+                _hover: {
+                    borderColor: "secondary.500",
+                    bg: "secondary.50",
+                },
+                _focus: {
+                    borderColor: "secondary.500",
+                    bg: "secondary.50",
+                    outline: "none",
+                    boxShadow: "0 0 0 0",
+                },
+            },
+        }),
     },
 };

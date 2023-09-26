@@ -1,10 +1,24 @@
 import React from "react";
 import MainLayout from "@/layout/MainLayout";
-import { Center, Flex, Text, Heading, Button } from "@chakra-ui/react";
+import { Center, Flex, Text, Heading, Button, Box } from "@chakra-ui/react";
 import { useCheckSexSelected } from "@/context";
-import { Counter } from "@/components/Counter";
-import Image from "next/image";
 import { whatsappNumber } from "@/resources/whatsappNumber";
+import CartProductCard from "@/components/CartProductCard";
+
+interface IItems {
+    nome: string;
+    id: number;
+    marca: string;
+    price: number;
+    image: string;
+    description: string;
+    tamanhos: string[];
+    category: string[];
+    quantity: string;
+    size: string;
+    color: string;
+    colors?: string[];
+}
 
 const Cart = () => {
     const { sexSelected } = useCheckSexSelected();
@@ -51,6 +65,36 @@ Valor total do pedido: R$${total}.00
             }
         }
     };
+    const [products, setProducts] = React.useState<IItems[]>([]);
+
+    React.useEffect(() => {
+        if (typeof window !== "undefined") {
+            const local = localStorage.getItem("cartItems");
+            if (local) {
+                setProducts(JSON.parse(local));
+            }
+        }
+    }, []);
+
+    const attQuantity = async (index: number, newQuantity: number) => {
+        const localProducts = [...products];
+        localProducts[index].quantity = newQuantity.toString();
+        setProducts(localProducts);
+        localStorage.setItem("cartItems", JSON.stringify(localProducts));
+    };
+    const attColor = async (index: number, newColor: string) => {
+        const localProducts = [...products];
+        localProducts[index].color = newColor;
+        setProducts(localProducts);
+        localStorage.setItem("cartItems", JSON.stringify(localProducts));
+    };
+
+    const onClickRemove = (index: number) => {
+        const localProducts = [...products];
+        localProducts.splice(index, 1);
+        setProducts(localProducts);
+        localStorage.setItem("cartItems", JSON.stringify(localProducts));
+    };
 
     return (
         <MainLayout
@@ -84,35 +128,32 @@ Valor total do pedido: R$${total}.00
                 </Center>
                 <Flex
                     direction="column"
-                    alignItems="center"
-                    border="1px solid"
-                    borderColor="secondary.900"
                     p={5}
+                    bg="white"
                     rounded="xl"
-                    w={400}
+                    w={{ base: "90%", md: 700 }}
                     mx="auto"
                 >
-                    <Flex alignItems="center" w="100%" gap={5}>
-                        <Image
-                            width={80}
-                            height={80}
-                            quality={100}
-                            src="/img/products/f2.jpg"
-                            alt="teste"
-                        />
-                        <Flex flexDirection="column">
-                            <Text>Produto 1</Text>
-                            <Counter />
-                        </Flex>
+                    <Flex w="100%" mx="auto" direction="column" gap={3}>
+                        {products.map((item, index) => (
+                            <CartProductCard
+                                key={index}
+                                onClickAttQuantity={(e) =>
+                                    attQuantity(index, e)
+                                }
+                                onClickRemove={() => onClickRemove(index)}
+                                onClickAttColor={(e) => attColor(index,e)}
+                                part={{
+                                    nome: item.nome,
+                                    price: item.price * Number(item.quantity),
+                                    quantidade: Number(item.quantity),
+                                    tamanhos: item.tamanhos,
+                                    cores: item.colors,
+                                }}
+                            />
+                        ))}
                     </Flex>
-                    <Flex gap={3} w="100%" mt={3}>
-                        <Text color="secondary.900" cursor="pointer">
-                            Excluir
-                        </Text>
-                        <Text color="secondary.900" cursor="pointer">
-                            Comprar agora!
-                        </Text>
-                    </Flex>
+                    <Box w="100%" h="1px" mt={5} bg="red.700" />
                 </Flex>
                 <Button
                     w="max-content"

@@ -1,33 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
 
-const Counter: React.FC = () => {
-    const [count, setCount] = useState(1);
+interface IProps {
+    onChange: (e: number) => void;
+    quantity: number;
+}
+
+const Counter: React.FC<IProps> = ({ onChange, quantity }) => {
     return (
         <Flex
-            mt={2}
-            w="max-content"
             bg="white"
             rounded="lg"
             border="1px solid"
-            borderColor="secondary.900"
+            borderColor="red"
+            w={100}
         >
             <Text
                 cursor="pointer"
                 p={3}
-                color="secondary.900"
-                onClick={() => setCount(count === 1 ? 1 : count - 1)}
+                color="red"
+                onClick={() => {
+                    onChange(quantity === 1 ? 1 : quantity - 1);
+                }}
             >
                 -
             </Text>
-            <Text p={3} cursor="default" color="secondary.900">
-                {count}
+            <Text p={3} cursor="default" color="red">
+                {quantity}
             </Text>
             <Text
                 cursor="pointer"
                 p={3}
-                onClick={() => setCount(count + 1)}
-                color="secondary.900"
+                onClick={() => onChange(quantity + 1)}
+                color="red"
             >
                 +
             </Text>
