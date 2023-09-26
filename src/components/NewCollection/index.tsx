@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Grid, Heading, Text } from "@chakra-ui/react";
+import { Button, Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import CardProduct from "../CardProduct";
 import { useRouter } from "next/router";
 import { novaColecao } from "@/resources/products/masculino/novaColecao";
@@ -45,6 +45,18 @@ const NewCollection: React.FC = () => {
                     />
                 ))}
             </Grid>
+            <Button
+                onClick={() => navigator.push("/allProducts")}
+                w="max-content"
+                mt={10}
+                mx="auto"
+                fontSize={14}
+                bg="primary.400"
+                color="primary.700"
+                fontFamily={"'Libre Baskerville', serif"}
+            >
+                VEJA TODOS OS PRODUTOS
+            </Button>
         </Flex>
     );
 };

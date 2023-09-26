@@ -74,7 +74,7 @@ const ProductList: React.FC = () => {
                     maxW={400}
                     h={288}
                     objectFit="cover"
-                    src="/imagem_loja.png"
+                    src="/imagem_fundadores.png"
                     alt="Image Loja"
                 />
                 <Image
@@ -82,7 +82,7 @@ const ProductList: React.FC = () => {
                     maxW={400}
                     h={288}
                     objectFit="cover"
-                    src="/imagem_fundadores.png"
+                    src="/imagem_loja.png"
                     alt="Image Loja"
                 />
             </Flex>
@@ -102,7 +102,7 @@ const ProductList: React.FC = () => {
                 <Text color="secondary.900" fontWeight={600}>
                     Acessórios exclusivos
                 </Text>
-                <Heading>Várias opções - Óculos, correntes e diversos</Heading>
+                <Heading>MONTE SEU ESTILO</Heading>
                 <Button
                     mt={5}
                     p={3}
@@ -110,7 +110,7 @@ const ProductList: React.FC = () => {
                     color="white"
                     _hover={{ bg: "secondary.800", color: "primary.400" }}
                 >
-                    Explore mais
+                    Crie agora
                 </Button>
             </Center>
         </Flex>

@@ -6,7 +6,11 @@ const calcas: IPart[] = [
         nome: "Calça Jeans Skinny Grifle Casual Masculina - Preto",
         marca: "Nike",
         price: 450,
-        image: "https://static.netshoes.com.br/produtos/calca-jeans-skinny-grifle-casual-masculina/06/KLL-0454-006/KLL-0454-006_zoom1.jpg?ts=1661533076&ims=544x",
+        image: [
+            "/img/products/f1.jpg",
+            "/img/products/f2.jpg",
+            "/img/products/f3.jpg",
+        ],
         tamanhos: ["38", "39", "40"],
         category: ["Calça Alfaiataria", "C", "Roupa"],
         description:

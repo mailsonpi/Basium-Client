@@ -24,7 +24,12 @@ const CardProduct: React.FC<IProps> = ({ product, onClick }) => {
             flexDirection="column"
             mx="auto"
         >
-            <Image rounded={"30px"} w="100%" src={product.image} alt="camisa" />
+            <Image
+                rounded={"30px"}
+                w="100%"
+                src={product.image[0]}
+                alt="camisa"
+            />
             <Text
                 mt={5}
                 fontSize={{ base: 14, md: 18 }}

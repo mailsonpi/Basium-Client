@@ -8,7 +8,7 @@ const OptionsNavigation: React.FC = () => {
             <DynamicModal
                 title={"Frete Grátis"}
                 description={
-                    "Frete grátis em compras acima de 300,00 reais para todo país."
+                    "Frete grátis em compras acima de 500,00 reais para todo país."
                 }
                 image={"/foto_fretegratis.png"}
                 message={"Olá, gostaria de falar sobre o frete grátis."}

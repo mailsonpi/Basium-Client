@@ -6,7 +6,11 @@ const sapatos: IPart[] = [
         nome: "Tênis Nike Revolution 6 Next Nature Masculino - Preto",
         marca: "Nike",
         price: 450,
-        image: "https://static.netshoes.com.br/produtos/tenis-nike-revolution-6-next-nature-masculino/06/2IC-5000-006/2IC-5000-006_zoom1.jpg?ts=1681320188&ims=544x",
+        image: [
+            "/img/products/f1.jpg",
+            "/img/products/f2.jpg",
+            "/img/products/f3.jpg",
+        ],
         tamanhos: ["38", "39", "40"],
         category: ["Calçados", "Nike"],
         description:

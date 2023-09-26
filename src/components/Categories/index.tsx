@@ -4,101 +4,57 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 const Categories: React.FC = () => {
     return (
         <Flex
-            justifyContent="space-around"
+            justifyContent="center"
             my={10}
             gap={{ base: 0, md: 5 }}
             direction="column"
         >
-            <Flex
-                justifyContent="space-between"
-                mx="auto"
-                w={"90%"}
-                flexWrap="wrap"
-            >
+            <Flex justifyContent="center" gap={5} w="100%" flexWrap="wrap">
                 <Flex
-                    w="30%"
-                    h={{ base: 200, md: 330 }}
-                    minW={325}
-                    mb={5}
-                    bg="url('img/banner/imagem_livros.png')"
-                    direction="column"
-                    justifyContent="center"
-                    bgSize="cover"
-                    bgPosition="center"
-                    mx="auto"
-                    p={5}
-                >
-                    <Text fontWeight={600} fontSize={{ base: 32, md: 42 }}>
-                        Livros
-                    </Text>
-                    <Text
-                        fontSize={{ base: 16, md: 20 }}
-                        mb={1}
-                        fontWeight={600}
-                    >
-                        Amplie sua visão de mundo, com mais conhecimento.
-                    </Text>
-                    <Box
-                        bg="secondary.800"
-                        p={{ base: 2, md: 3 }}
-                        cursor="pointer"
-                        _hover={{
-                            bg: "secondary.500",
-                        }}
-                        transition=".4s"
-                        border="1px solid white"
-                        w="max-content"
-                    >
-                        <Text cursor="pointer" fontWeight={600}>
-                            Explorar
-                        </Text>
-                    </Box>
-                </Flex>
-                <Flex
-                    w="30%"
-                    h={{ base: 200, md: 330 }}
-                    minW={325}
-                    mb={5}
-                    bg="url('img/banner/b4.jpg')"
-                    direction="column"
-                    justifyContent="center"
-                    bgSize="cover"
-                    bgPosition="center"
-                    mx="auto"
-                    p={5}
-                >
-                    <Text fontWeight={600} fontSize={{ base: 32, md: 42 }}>
-                        Dicas
-                    </Text>
-                    <Text
-                        fontSize={{ base: 16, md: 20 }}
-                        mb={1}
-                        fontWeight={600}
-                    >
-                        te ajudamos no dia-a-dia.
-                    </Text>
-                    <Box
-                        bg="secondary.800"
-                        p={{ base: 2, md: 3 }}
-                        cursor="pointer"
-                        _hover={{
-                            bg: "secondary.500",
-                        }}
-                        transition=".4s"
-                        border="1px solid white"
-                        w="max-content"
-                    >
-                        <Text cursor="pointer" fontWeight={600}>
-                            Explorar
-                        </Text>
-                    </Box>
-                </Flex>
-                <Flex
-                    w="30%"
+                    w="40%"
                     h={{ base: 200, md: 330 }}
                     minW={325}
                     mb={5}
                     bg="url('imagem_modacasual1.png')"
+                    direction="column"
+                    justifyContent="center"
+                    bgSize="cover"
+                    bgPosition="center"
+                    mx="auto"
+                    p={5}
+                >
+                    <Text fontWeight={600} fontSize={{ base: 32, md: 38 }}>
+                        Seja elegante no seu trabalho
+                    </Text>
+                    <Text
+                        fontSize={{ base: 16, md: 20 }}
+                        mb={1}
+                        fontWeight={600}
+                    >
+                        Mais estilo para seu trabalho.
+                    </Text>
+                    <Box
+                        bg="secondary.800"
+                        p={{ base: 2, md: 3 }}
+                        cursor="pointer"
+                        _hover={{
+                            bg: "secondary.500",
+                        }}
+                        transition=".4s"
+                        border="1px solid white"
+                        w="max-content"
+                    >
+                        <Text cursor="pointer" fontWeight={600}>
+                            Explorar
+                        </Text>
+                    </Box>
+                </Flex>
+                <Flex
+                    w="40%"
+                    h={{ base: 200, md: 330 }}
+                    minW={325}
+                    mb={5}
+                    bg="url('/imagem_modacorp1.png')"
                     direction="column"
                     justifyContent="center"
                     bgSize="cover"
@@ -133,14 +89,9 @@ const Categories: React.FC = () => {
                     </Box>
                 </Flex>
             </Flex>
-            <Flex
-                justifyContent="space-between"
-                mx="auto"
-                w={"90%"}
-                flexWrap="wrap"
-            >
+            <Flex justifyContent="center" gap={10} w="100%" flexWrap="wrap">
                 <Flex
-                    w="30%"
+                    w="40%"
                     h={{ base: 200, md: 330 }}
                     minW={325}
                     mb={5}
@@ -153,14 +104,14 @@ const Categories: React.FC = () => {
                     p={5}
                 >
                     <Text fontWeight={600} fontSize={{ base: 32, md: 42 }}>
-                        Coleção de Acessorios
+                        Acessórios
                     </Text>
                     <Text
                         fontSize={{ base: 16, md: 20 }}
                         mb={1}
                         fontWeight={600}
                     >
-                        Oculos, relógios e diversos.
+                        Carteira, cintas e bolsas
                     </Text>
                     <Box
                         bg="secondary.800"
@@ -179,11 +130,11 @@ const Categories: React.FC = () => {
                     </Box>
                 </Flex>
                 <Flex
-                    w="30%"
+                    w="40%"
                     h={{ base: 200, md: 330 }}
                     minW={325}
                     mb={5}
-                    bg="url('/imagem_camisasocial1.png')"
+                    bg="url('img/banner/b4.jpg')"
                     direction="column"
                     justifyContent="center"
                     bgSize="cover"
@@ -191,54 +142,15 @@ const Categories: React.FC = () => {
                     mx="auto"
                     p={5}
                 >
-                    <Text fontWeight={600} fontSize={{ base: 32, md: 42 }}>
-                        Blusas Sociais
+                    <Text fontWeight={600} fontSize={{ base: 32, md: 38 }}>
+                        Amplie sua visão do mundo, com mais conhecimentos
                     </Text>
                     <Text
                         fontSize={{ base: 16, md: 20 }}
                         mb={1}
                         fontWeight={600}
                     >
-                        Mais elegância e estilo.
-                    </Text>
-                    <Box
-                        bg="secondary.800"
-                        p={{ base: 2, md: 3 }}
-                        cursor="pointer"
-                        _hover={{
-                            bg: "secondary.500",
-                        }}
-                        transition=".4s"
-                        border="1px solid white"
-                        w="max-content"
-                    >
-                        <Text cursor="pointer" fontWeight={600}>
-                            Explorar
-                        </Text>
-                    </Box>
-                </Flex>
-                <Flex
-                    w="30%"
-                    h={{ base: 200, md: 330 }}
-                    minW={325}
-                    mb={5}
-                    bg="url('/imagem_modacorp1.png')"
-                    direction="column"
-                    justifyContent="center"
-                    bgSize="cover"
-                    bgPosition="center"
-                    mx="auto"
-                    p={5}
-                >
-                    <Text fontWeight={600} fontSize={{ base: 32, md: 42 }}>
-                        Moda Corporativa
-                    </Text>
-                    <Text
-                        fontSize={{ base: 16, md: 20 }}
-                        mb={1}
-                        fontWeight={600}
-                    >
-                        Mais estilo para seu trabalho.
+                        te ajudamos no dia-a-dia.
                     </Text>
                     <Box
                         bg="secondary.800"

@@ -12,6 +12,7 @@ import {
     NumberDecrementStepper,
     Button,
     useToast,
+    Box,
 } from "@chakra-ui/react";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
@@ -26,13 +27,14 @@ import { bermudas } from "@/resources/products/masculino/bermudas";
 import { calcaAlfaiataria } from "@/resources/products/masculino/calcaAlfaiataria";
 import { Blazer } from "@/resources/products/masculino/blazer";
 import { useCheckSexSelected } from "@/context";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 const ProductDetails: NextPage = () => {
     const { sexSelected } = useCheckSexSelected();
     const [product, setProduct] = React.useState<IPart>();
     const [quantity, setQuantity] = React.useState(1);
     const [size, setSize] = React.useState("P");
-    const [relations, setRelations] = React.useState<IPart[]>([]);
     const router = useRouter();
     const { id } = router.query;
     const toast = useToast();
@@ -50,12 +52,6 @@ const ProductDetails: NextPage = () => {
         );
         const camisa = allProducts.find((item: any) => item.id === Number(id));
         setProduct(camisa);
-    };
-    const getRelations = () => {
-        const produtosFiltrados = Camisas.filter((produto) =>
-            product?.category.every((cat) => produto.category.includes(cat))
-        );
-        setRelations(produtosFiltrados);
     };
     const addProduct = async () => {
         const allProducts = [];
@@ -100,10 +96,8 @@ const ProductDetails: NextPage = () => {
     };
     React.useEffect(() => {
         getProduct();
-        getRelations();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id, product]);
-
     return (
         <MainLayout
             navbar={{
@@ -127,33 +121,35 @@ const ProductDetails: NextPage = () => {
                     justifyContent="center"
                     w="100%"
                 >
-                    <Flex direction="column" gap={3}>
-                        <Image
-                            objectFit="cover"
-                            src={product?.image}
-                            alt={product?.nome}
-                            mx="auto"
-                            w={{ base: "90%", md: 500 }}
-                            h={{ base: "40vh", md: 500 }}
-                            mb={5}
-                        />
-                        <Flex gap={2} display={{ base: "none", md: "flex" }}>
-                            {relations.map((item, index) => {
-                                return (
-                                    index < 4 && (
-                                        <Image
-                                            w="55%"
-                                            cursor="pointer"
-                                            key={index}
-                                            objectFit="cover"
-                                            src={item.image}
-                                            alt={item.nome}
-                                            h={100}
-                                        />
-                                    )
-                                );
-                            })}
-                        </Flex>
+                    <Flex direction="column" gap={3} w="500px">
+                        <Carousel
+                            showIndicators={false}
+                            showArrows={false}
+                            swipeable
+                            emulateTouch
+                            showThumbs
+                            infiniteLoop
+                            interval={2000}
+                            autoPlay
+                        >
+                            {product?.image.map((item, index) => (
+                                <Box
+                                    key={index}
+                                    w={{ base: "90%", md: "500px" }}
+                                    h={{ base: "40vh", md: "500px" }}
+                                    mx="auto"
+                                    bg="red"
+                                >
+                                    <Image
+                                        objectFit="cover"
+                                        src={item}
+                                        alt={item + index}
+                                        mx="auto"
+                                        mb={5}
+                                    />
+                                </Box>
+                            ))}
+                        </Carousel>
                     </Flex>
                     <Flex direction="column" ml={5}>
                         <Flex>

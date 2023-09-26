@@ -1,13 +1,4 @@
-export interface IPart {
-    nome: string;
-    id: number;
-    marca: string;
-    price: number;
-    image: string;
-    description: string;
-    tamanhos: string[];
-    category: string[];
-}
+import { IPart } from "./camisas";
 
 export type category =
     | "Acessórios"
@@ -25,7 +16,11 @@ const Blazer: IPart[] = [
         nome: "Cartoon Astronaut Blazer",
         marca: "adidas",
         price: 78,
-        image: "https://static.netshoes.com.br/produtos/blazer-masculino-sim-fit-moda-casual/68/QSO-7396-168/QSO-7396-168_zoom1.jpg?ts=1680877203&ims=544x",
+        image: [
+            "/img/products/f1.jpg",
+            "/img/products/f2.jpg",
+            "/img/products/f3.jpg",
+        ],
         tamanhos: ["P", "M"],
         category: ["Blazer"],
         description:

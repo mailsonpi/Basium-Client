@@ -6,7 +6,11 @@ const novaColecao: IPart[] = [
         nome: "Cartoon Astronaut T-Shirts",
         marca: "adidas",
         price: 78,
-        image: "/img/products/f1.jpg",
+        image: [
+            "/img/products/f1.jpg",
+            "/img/products/f2.jpg",
+            "/img/products/f3.jpg",
+        ],
         tamanhos: ["P", "M"],
         category: ["newCollection"],
         description:

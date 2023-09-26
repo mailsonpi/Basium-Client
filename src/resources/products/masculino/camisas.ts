@@ -3,7 +3,7 @@ export interface IPart {
     id: number;
     marca: string;
     price: number;
-    image: string;
+    image: string[];
     description: string;
     tamanhos: string[];
     category: string[];
@@ -25,7 +25,11 @@ const Camisas: IPart[] = [
         nome: "Cartoon Astronaut T-Shirts",
         marca: "adidas",
         price: 78,
-        image: "/img/products/f1.jpg",
+        image: [
+            "/img/products/f1.jpg",
+            "/img/products/f2.jpg",
+            "/img/products/f3.jpg",
+        ],
         tamanhos: ["P", "M"],
         category: ["Camisas", "T-Shirts"],
         description:
