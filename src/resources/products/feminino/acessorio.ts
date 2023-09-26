@@ -3,7 +3,7 @@ import { IPart } from "../masculino/camisas";
 const acessorio: IPart[] = [
     {
         id: 200001,
-        nome: "FEMENINO",
+        nome: "FEMENINO teste",
         marca: "Gold",
         price: 1500,
         image: [

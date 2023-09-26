@@ -3,7 +3,7 @@ import { IPart } from "../masculino/camisas";
 const bermudas: IPart[] = [
     {
         id: 20101,
-        nome: "Kit 4 Shorts Lisos Academia 3 Bolsos Tactel Treino Praia Elástico Cordão Bermudas - Sortido",
+        nome: "FEMENINO teste",
         marca: "Gold",
         price: 2010,
         image: [

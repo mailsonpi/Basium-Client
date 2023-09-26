@@ -3,7 +3,7 @@ import { IPart } from "../masculino/camisas";
 const novaColecao: IPart[] = [
     {
         id: 20000,
-        nome: "Cartoon Astronaut T-Shirts",
+        nome: "FEMENINO teste",
         marca: "adidas",
         price: 78,
         image: [

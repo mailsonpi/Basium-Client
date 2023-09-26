@@ -13,7 +13,7 @@ export type category =
 const Blazer: IPart[] = [
     {
         id: 20701,
-        nome: "Cartoon Astronaut Blazer",
+        nome: "FEMENINO teste",
         marca: "adidas",
         price: 78,
         image: [
