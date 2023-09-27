@@ -1,7 +1,9 @@
 import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
+import { useCheckSexSelected } from "@/context";
 
 const Categories: React.FC = () => {
+    const { sexSelected } = useCheckSexSelected();
     return (
         <Flex
             justifyContent="center"
@@ -15,7 +17,11 @@ const Categories: React.FC = () => {
                     h={{ base: 200, md: 330 }}
                     minW={325}
                     mb={5}
-                    bg="url('imagem_modacasual1.png')"
+                    bg={
+                        sexSelected === "masculine"
+                        ? "url('/imgCategory/imagem_modacorp_m.png')"
+                        : "url('/imgCategory/imagem_modacorp_f.png')"
+                    }
                     direction="column"
                     justifyContent="center"
                     bgSize="cover"
@@ -54,7 +60,11 @@ const Categories: React.FC = () => {
                     h={{ base: 200, md: 330 }}
                     minW={325}
                     mb={5}
-                    bg="url('/imagem_modacorp1.png')"
+                    bg={
+                        sexSelected === "masculine"
+                            ? "url('/imgCategory/imagem_modacasual_m.png')"
+                            : "url('/imgCategory/imagem_modacasual_f.png')"
+                    }
                     direction="column"
                     justifyContent="center"
                     bgSize="cover"
@@ -95,7 +105,11 @@ const Categories: React.FC = () => {
                     h={{ base: 200, md: 330 }}
                     minW={325}
                     mb={5}
-                    bg="url('/imagem_acessorios1.png')"
+                    bg={
+                        sexSelected === "masculine"
+                            ? "url('/imgCategory/imagem_acessorios_m.png')"
+                            : "url('/imgCategory/imagem_acessorios_f.png')"
+                    }
                     direction="column"
                     justifyContent="center"
                     bgSize="cover"
@@ -134,7 +148,7 @@ const Categories: React.FC = () => {
                     h={{ base: 200, md: 330 }}
                     minW={325}
                     mb={5}
-                    bg="url('img/banner/b4.jpg')"
+                    bg="url('/imgCategory/b4.jpg')"
                     direction="column"
                     justifyContent="center"
                     bgSize="cover"
