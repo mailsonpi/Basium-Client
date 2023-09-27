@@ -9,7 +9,7 @@ const HomeCarousel: React.FC = () => {
 
     const bannersMasculine = [
         {
-            url: "url('/imgBannerHome/fullbanner_sloganM.svg')",
+            url: "url('/ImgBannerHome/fullbanner_sloganM.svg')",
             text1: "Grandes Ofertas",
             text2: "Seu estilo com",
             text3: "toque de classe!",
@@ -20,7 +20,7 @@ const HomeCarousel: React.FC = () => {
             },
         },
         {
-            url: "url('/imgBannerHome/fullbanner_calca.svg')",
+            url: "url('/ImgBannerHome/fullbanner_calca.svg')",
             text1: "Grandes Ofertas",
             text2: "Roupas a partir de",
             text3: "R$ 79,90",
@@ -31,7 +31,7 @@ const HomeCarousel: React.FC = () => {
             },
         },
         {
-            url: "url('/imgBannerHome/fullbanner_sapatosM.svg')",
+            url: "url('/ImgBannerHome/fullbanner_sapatosM.svg')",
             text1: "Grandes Ofertas",
             text2: "Calçados a partir de",
             text3: "R$ 99,90",
@@ -42,7 +42,7 @@ const HomeCarousel: React.FC = () => {
             },
         },
         {
-            url: "url('/imgBannerHome/fullbanner_acessoriosM.svg')",
+            url: "url('/ImgBannerHome/fullbanner_acessoriosM.svg')",
             text1: "Grandes Ofertas",
             text2: "Acessórios a partir de",
             text3: "R$ 34,99",
@@ -55,7 +55,7 @@ const HomeCarousel: React.FC = () => {
     ];
     const bannersFeminine = [
         {
-            url: "url('/imgBannerHome/fullbanner_roupasF.svg')",
+            url: "url('/ImgBannerHome/fullbanner_roupasF.svg')",
             text2: "Roupas a partir de",
             text3: "R$ 99,90",
             off: {
@@ -65,7 +65,7 @@ const HomeCarousel: React.FC = () => {
             },
         },
         {
-            url: "url('/imgBannerHome/fullbanner_acessoriosF.svg')",
+            url: "url('/ImgBannerHome/fullbanner_acessoriosF.svg')",
             text2: "Acessórios a partir de",
             text3: "R$ 34,99",
             off: {
@@ -75,7 +75,7 @@ const HomeCarousel: React.FC = () => {
             },
         },
         {
-            url: "url('/imgBannerHome/fullbanner_sapatosF.svg')",
+            url: "url('/ImgBannerHome/fullbanner_sapatosF.svg')",
             text2: "Calçados a partir de",
             text3: "R$ 179,90",
             off: {
