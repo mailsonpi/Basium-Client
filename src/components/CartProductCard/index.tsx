@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Center, Text, Box, Select, Image } from "@chakra-ui/react";
+import { Flex, Text, Box, Select, Image } from "@chakra-ui/react";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { Counter } from "../Counter";
 
@@ -45,7 +45,7 @@ const CartProductCard: React.FC<IProps> = ({
                 w="100%"
             >
                 <Text
-                    color="red.700"
+                    color="secondary.900"
                     fontSize={{ base: 14, md: 24 }}
                     fontWeight={600}
                 >
@@ -61,7 +61,7 @@ const CartProductCard: React.FC<IProps> = ({
                         <Flex gap={{ base: 1, md: 2 }}>
                             <Box>
                                 <Text
-                                    color="red.700"
+                                    color="secondary.900"
                                     fontSize={{ base: 12, md: 20 }}
                                 >
                                     Tamanho:
@@ -84,7 +84,7 @@ const CartProductCard: React.FC<IProps> = ({
                             </Box>
                             <Flex direction="column">
                                 <Text
-                                    color="red.700"
+                                    color="secondary.900"
                                     fontSize={{ base: 12, md: 20 }}
                                 >
                                     Quantidade:
@@ -97,7 +97,7 @@ const CartProductCard: React.FC<IProps> = ({
                             {part.cores && (
                                 <Box>
                                     <Text
-                                        color="red.700"
+                                        color="secondary.900"
                                         fontSize={{ base: 12, md: 20 }}
                                     >
                                         Cores:
@@ -124,7 +124,7 @@ const CartProductCard: React.FC<IProps> = ({
                         </Flex>
                     </Flex>
                     <Text
-                        color="red.700"
+                        color="secondary.900"
                         cursor="pointer"
                         fontWeight={600}
                         fontSize={{ base: 14, md: 22 }}
@@ -141,7 +141,7 @@ const CartProductCard: React.FC<IProps> = ({
                         top={2}
                         right={2}
                     >
-                        <RiDeleteBin5Line color="red" size={20} />
+                        <RiDeleteBin5Line color="secondary.900" size={20} />
                     </Box>
                 </Flex>
             </Flex>

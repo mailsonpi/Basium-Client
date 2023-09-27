@@ -12,7 +12,7 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
     const router = useRouter();
     const rotaAtual = router.pathname;
     const sendMessage = () => {
-        const message = `Olá, vim pelo site e gostaria de conversar!`;
+        const message = `Olá, vim pelo site * BASIUM * e gostaria de conversar!`;
         const url = `whatsapp://send?phone=${whatsappNumber}&text=${encodeURIComponent(
             message
         )}`;

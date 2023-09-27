@@ -28,7 +28,7 @@ const Drawable: React.FC<IProps> = ({ colorTheming }) => {
     const rotaAtual = router.pathname;
 
     const sendMessage = () => {
-        const message = `Olá, vim pelo site e gostaria de conversar!`;
+        const message = `Olá, vim pelo site * BASIUM * e gostaria de conversar!`;
         const url = `whatsapp://send?phone=${whatsappNumber}&text=${encodeURIComponent(
             message
         )}`;
@@ -120,6 +120,7 @@ const Drawable: React.FC<IProps> = ({ colorTheming }) => {
                                 fontWeight={600}
                                 fontSize={20}
                                 color={switchColor("/home")}
+                                cursor="pointer"
                             >
                                 Início
                             </Text>
@@ -148,6 +149,7 @@ const Drawable: React.FC<IProps> = ({ colorTheming }) => {
                                 fontWeight={600}
                                 fontSize={20}
                                 color={switchColor("/allProducts")}
+                                cursor="pointer"
                             >
                                 Todos os produtos
                             </Text>
@@ -157,6 +159,7 @@ const Drawable: React.FC<IProps> = ({ colorTheming }) => {
                                 fontWeight={600}
                                 fontSize={20}
                                 color={switchColor("/tip")}
+                                cursor="pointer"
                             >
                                 Dicas
                             </Text>
@@ -166,6 +169,7 @@ const Drawable: React.FC<IProps> = ({ colorTheming }) => {
                                 fontWeight={600}
                                 fontSize={20}
                                 color={switchColor("/about")}
+                                cursor="pointer"
                             >
                                 Sobre
                             </Text>
@@ -174,6 +178,7 @@ const Drawable: React.FC<IProps> = ({ colorTheming }) => {
                             onClick={() => sendMessage()}
                             fontWeight={600}
                             fontSize={20}
+                            cursor="pointer"
                         >
                             Contato
                         </Text>

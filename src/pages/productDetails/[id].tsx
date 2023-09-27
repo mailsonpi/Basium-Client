@@ -17,15 +17,7 @@ import {
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import MainLayout from "@/layout/MainLayout";
-import { IPart, Camisas } from "@/resources/products/masculino/camisas";
-import { novaColecao } from "@/resources/products/masculino/novaColecao";
-import { sapatos } from "@/resources/products/masculino/sapatos";
-import { calcas } from "@/resources/products/masculino/calcas";
-import { blusaSocial } from "@/resources/products/masculino/blusaSocial";
-import { acessorio } from "@/resources/products/masculino/acessorio";
-import { bermudas } from "@/resources/products/masculino/bermudas";
-import { calcaAlfaiataria } from "@/resources/products/masculino/calcaAlfaiataria";
-import { Blazer } from "@/resources/products/masculino/blazer";
+import { IPart } from "@/resources/products/masculino/camisas";
 import { useCheckSexSelected } from "@/context";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";

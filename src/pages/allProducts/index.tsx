@@ -15,7 +15,7 @@ const AllProducts: NextPage = () => {
     const { sexSelected } = useCheckSexSelected();
     const [allProduct, setAllProduct] = React.useState<IPart[]>([]);
     const [page, setPage] = React.useState(1);
-    const [itemPerPage, setItemPerPage] = React.useState(8);
+    const itemPerPage = 8;
     const [search, setSearch] = React.useState<category | null>(null);
     const ref = useRef<HTMLImageElement | null>(null);
     const router = useRouter();
