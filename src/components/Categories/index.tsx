@@ -19,8 +19,8 @@ const Categories: React.FC = () => {
                     mb={5}
                     bg={
                         sexSelected === "masculine"
-                        ? "url('/imgCategory/imagem_modacorp_m.png')"
-                        : "url('/imgCategory/imagem_modacorp_f.png')"
+                            ? "url('/imgCategory/imagem_modacorp_m.png')"
+                            : "url('/imgCategory/imagem_modacorp_f.png')"
                     }
                     direction="column"
                     justifyContent="center"
