@@ -114,7 +114,11 @@ Valor total do pedido: R$${total}.00
         >
             <Flex
                 flexDir="column"
-                bg={sexSelected === "masculine" ? "secondary.900" : "white"}
+                bg={
+                    sexSelected === "masculine"
+                        ? "secondary.900"
+                        : "primary.300"
+                }
             >
                 <Center
                     h="40vh"

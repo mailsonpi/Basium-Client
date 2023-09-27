@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { BsHandbag } from "react-icons/bs";
 import { useRouter } from "next/router";
+import { whatsappNumber } from "@/resources/whatsappNumber";
 
 interface IProps {
     colorTheming?: "ligthPink" | "darkCyan";
@@ -10,6 +11,13 @@ interface IProps {
 const Navbar: React.FC<IProps> = ({ colorTheming }) => {
     const router = useRouter();
     const rotaAtual = router.pathname;
+    const sendMessage = () => {
+        const message = `Olá, vim pelo site e gostaria de conversar!`;
+        const url = `whatsapp://send?phone=${whatsappNumber}&text=${encodeURIComponent(
+            message
+        )}`;
+        window.location.href = url;
+    };
 
     const switchColor = (route: string) => {
         if (rotaAtual === route) {
@@ -113,7 +121,7 @@ const Navbar: React.FC<IProps> = ({ colorTheming }) => {
                         cursor="pointer"
                         _hover={{ color: "primary.500" }}
                         fontWeight={600}
-                        onClick={() => router.push("/contact")}
+                        onClick={() => sendMessage()}
                     >
                         Contato
                     </Text>

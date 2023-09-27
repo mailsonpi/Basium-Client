@@ -16,6 +16,7 @@ import Link from "next/link";
 import { AiOutlineMenuFold } from "react-icons/ai";
 import { BsHandbag } from "react-icons/bs";
 import { useRouter } from "next/router";
+import { whatsappNumber } from "@/resources/whatsappNumber";
 
 interface IProps {
     colorTheming?: "ligthPink" | "darkCyan";
@@ -25,6 +26,14 @@ const Drawable: React.FC<IProps> = ({ colorTheming }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const router = useRouter();
     const rotaAtual = router.pathname;
+
+    const sendMessage = () => {
+        const message = `Olá, vim pelo site e gostaria de conversar!`;
+        const url = `whatsapp://send?phone=${whatsappNumber}&text=${encodeURIComponent(
+            message
+        )}`;
+        window.location.href = url;
+    };
 
     const switchColor = (route: string) => {
         if (rotaAtual === route) {
@@ -161,11 +170,13 @@ const Drawable: React.FC<IProps> = ({ colorTheming }) => {
                                 Sobre
                             </Text>
                         </Link>
-                        <Link href="/contact">
-                            <Text fontWeight={600} fontSize={20}>
-                                Contato
-                            </Text>
-                        </Link>
+                        <Text
+                            onClick={() => sendMessage()}
+                            fontWeight={600}
+                            fontSize={20}
+                        >
+                            Contato
+                        </Text>
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>

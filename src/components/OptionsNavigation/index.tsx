@@ -1,8 +1,10 @@
 import React from "react";
 import { Flex, Image } from "@chakra-ui/react";
 import { DynamicModal } from "../DynamicModal";
+import { useCheckSexSelected } from "@/context";
 
 const OptionsNavigation: React.FC = () => {
+    const { sexSelected } = useCheckSexSelected();
     return (
         <Flex justifyContent="space-around" my={10} flexWrap="wrap" gap={5}>
             <DynamicModal
@@ -10,7 +12,11 @@ const OptionsNavigation: React.FC = () => {
                 description={
                     "Frete grátis em compras acima de 500,00 reais para todo país."
                 }
-                image={"/foto_fretegratis.png"}
+                image={
+                    sexSelected === "masculine"
+                        ? "/imgModalHome/foto_fretegratis_masculino.png"
+                        : "/imgModalHome/foto_fretegratis_f.png"
+                }
                 message={"Olá, gostaria de falar sobre o frete grátis."}
             >
                 <Image
@@ -32,7 +38,11 @@ const OptionsNavigation: React.FC = () => {
                 description={
                     "Para termos uma relação próxima aos nossos clientes e sanar qualquer dúvida, você pode entrar em contato pelo WhatsApp para melhor suporte."
                 }
-                image={"/foto_suporte.png"}
+                image={
+                    sexSelected === "masculine"
+                        ? "/imgModalHome/foto_suporte_masculino.png"
+                        : "/imgModalHome/foto_suporte_f.png"
+                }
             >
                 <Image
                     cursor="pointer"
@@ -53,7 +63,11 @@ const OptionsNavigation: React.FC = () => {
                 description={
                     "Nossa condição especial para ser uma revendedora Basium é simples e lhe garante uma renda extra de até 30% de comissão. Gostaria de saber mais detalhes sobre?"
                 }
-                image={"/foto_revendedor.png"}
+                image={
+                    sexSelected === "masculine"
+                        ? "/imgModalHome/foto_revendedor_masculino.png"
+                        : "/imgModalHome/foto_revendedor_f.png"
+                }
             >
                 <Image
                     cursor="pointer"
@@ -70,7 +84,11 @@ const OptionsNavigation: React.FC = () => {
                 message={"Olá, gostaria de entender mais sobre o parcelamento."}
                 title={"Parcelamento"}
                 description={"Parcelamento em até 6x no cartão"}
-                image={"/foto_parcelamento.png"}
+                image={
+                    sexSelected === "masculine"
+                        ? "/imgModalHome/foto_parcelamento_masculino.png"
+                        : "/imgModalHome/foto_parcelamento_f.png"
+                }
             >
                 <Image
                     cursor="pointer"
