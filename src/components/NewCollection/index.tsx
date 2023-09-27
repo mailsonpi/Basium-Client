@@ -2,12 +2,16 @@ import React from "react";
 import { Button, Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import CardProduct from "../CardProduct";
 import { useRouter } from "next/router";
-import { novaColecao } from "@/resources/products/masculino/novaColecao";
 import { useCheckSexSelected } from "@/context";
+import { novaColecaoM } from "@/resources/products/masculino/novaColecao";
+import { novaColecaoF } from "@/resources/products/feminino/novaColecaoF";
 
 const NewCollection: React.FC = () => {
     const { sexSelected } = useCheckSexSelected();
     const navigator = useRouter();
+
+    const typeOfProducts =
+        sexSelected === "masculine" ? novaColecaoM : novaColecaoF;
     return (
         <Flex justifyContent="space-around" my={10} direction="column">
             <Heading
@@ -35,7 +39,7 @@ const NewCollection: React.FC = () => {
                 gap={10}
                 mt={14}
             >
-                {novaColecao.map((item, key) => {
+                {typeOfProducts.map((item, key) => {
                     return (
                         key < 4 && (
                             <CardProduct

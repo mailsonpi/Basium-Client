@@ -5,7 +5,8 @@ import { blusaSocial } from "./blusaSocial";
 import { calcaAlfaiataria } from "./calcaAlfaiataria";
 import { calcas } from "./calcas";
 import { Camisas } from "./camisas";
-import { novaColecao } from "./novaColecao";
+import { destaquesF } from "./destaquesF";
+import { novaColecaoF } from "./novaColecaoF";
 import { sapatos } from "./sapatos";
 
 export const feminineProducts = [
@@ -17,5 +18,6 @@ export const feminineProducts = [
     Blazer,
     bermudas,
     sapatos,
-    novaColecao,
+    novaColecaoF,
+    destaquesF,
 ];

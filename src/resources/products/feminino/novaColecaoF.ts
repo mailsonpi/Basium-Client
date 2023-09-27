@@ -1,9 +1,9 @@
 import { IPart } from "../masculino/camisas";
 
-const novaColecao: IPart[] = [
+const novaColecaoF: IPart[] = [
     {
         id: 20000,
-        nome: "FEMENINO teste",
+        nome: "Colecao Feminino",
         marca: "adidas",
         price: 78,
         image: [
@@ -18,4 +18,4 @@ const novaColecao: IPart[] = [
     },
 ];
 
-export { novaColecao };
+export { novaColecaoF };

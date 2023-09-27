@@ -1,9 +1,9 @@
 import { IPart } from "../masculino/camisas";
 
-const novaColecao: IPart[] = [
+const novaColecaoM: IPart[] = [
     {
         id: 10000,
-        nome: "Cartoon Astronaut T-Shirts",
+        nome: "Colecao Masc",
         marca: "adidas",
         price: 78,
         image: [
@@ -78,4 +78,4 @@ const novaColecao: IPart[] = [
     },
 ];
 
-export { novaColecao };
+export { novaColecaoM };

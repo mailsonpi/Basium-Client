@@ -8,14 +8,18 @@ import {
     Text,
     Button,
 } from "@chakra-ui/react";
-import { Camisas } from "@/resources/products/masculino/camisas";
 import CardProduct from "../CardProduct";
 import { useRouter } from "next/router";
 import { useCheckSexSelected } from "@/context";
+import { destaquesM } from "@/resources/products/masculino/destaquesM";
+import { destaquesF } from "@/resources/products/feminino/destaquesF";
 
 const ProductList: React.FC = () => {
     const navigator = useRouter();
     const { sexSelected } = useCheckSexSelected();
+
+    const typeOfProducts =
+        sexSelected === "masculine" ? destaquesM : destaquesF;
 
     return (
         <Flex justifyContent="space-around" my={10} direction="column">
@@ -44,7 +48,7 @@ const ProductList: React.FC = () => {
                 gap={10}
                 mt={14}
             >
-                {Camisas.map((item, key) => (
+                {typeOfProducts.map((item, key) => (
                     <CardProduct
                         onClick={() =>
                             navigator.push(`productDetails/${item.id}`)
