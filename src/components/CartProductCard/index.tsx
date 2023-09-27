@@ -1,6 +1,5 @@
 import React from "react";
-import Image from "next/image";
-import { Flex, Center, Text, Box, Select } from "@chakra-ui/react";
+import { Flex, Center, Text, Box, Select, Image } from "@chakra-ui/react";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { Counter } from "../Counter";
 
@@ -11,6 +10,8 @@ interface IProps {
         cores?: string[];
         price: number;
         quantidade: number;
+        colorSelected: string;
+        image: string;
     };
     onClickRemove: () => void;
     onClickAttQuantity: (e: number) => void;
@@ -24,14 +25,18 @@ const CartProductCard: React.FC<IProps> = ({
     onClickAttColor,
 }) => {
     return (
-        <Flex alignItems="center" w="100%" gap={5}>
+        <Flex
+            alignItems="center"
+            w="100%"
+            gap={{ base: 2, md: 5 }}
+            position="relative"
+        >
             <Image
-                width={150}
-                height={150}
+                width={{ base: "80px", md: 150 }}
+                height="100%"
                 style={{ borderRadius: "10px" }}
-                quality={100}
-                src="/img/products/f2.jpg"
-                alt="teste"
+                src={part.image}
+                alt="Produto"
             />
             <Flex
                 flexDirection="column"
@@ -39,20 +44,36 @@ const CartProductCard: React.FC<IProps> = ({
                 h="100%"
                 w="100%"
             >
-                <Text color="red.700" fontSize={24} fontWeight={600}>
+                <Text
+                    color="red.700"
+                    fontSize={{ base: 14, md: 24 }}
+                    fontWeight={600}
+                >
                     {part.nome}
                 </Text>
-                <Flex gap={5} justifyContent="space-between" w="100%">
+                <Flex
+                    gap={5}
+                    justifyContent="space-between"
+                    w="100%"
+                    flexWrap="wrap"
+                >
                     <Flex gap={5} w="100%">
-                        <Flex gap={5}>
+                        <Flex gap={{ base: 1, md: 2 }}>
                             <Box>
-                                <Text color="red.700">Tamanho:</Text>
+                                <Text
+                                    color="red.700"
+                                    fontSize={{ base: 12, md: 20 }}
+                                >
+                                    Tamanho:
+                                </Text>
                                 <Select
-                                    w={100}
+                                    w={{ base: 50, md: 100 }}
                                     bg="transparent"
                                     border="1px solid red.700"
+                                    h={{ base: "30px", md: "46px" }}
                                     fontSize={12}
                                     variant="cart"
+                                    value={part.colorSelected}
                                 >
                                     {part.tamanhos.map((item, index) => (
                                         <option key={index + item}>
@@ -62,7 +83,12 @@ const CartProductCard: React.FC<IProps> = ({
                                 </Select>
                             </Box>
                             <Flex direction="column">
-                                <Text color="red.700">Quantidade:</Text>
+                                <Text
+                                    color="red.700"
+                                    fontSize={{ base: 12, md: 20 }}
+                                >
+                                    Quantidade:
+                                </Text>
                                 <Counter
                                     onChange={onClickAttQuantity}
                                     quantity={part.quantidade}
@@ -70,12 +96,18 @@ const CartProductCard: React.FC<IProps> = ({
                             </Flex>
                             {part.cores && (
                                 <Box>
-                                    <Text color="red.700">Cores:</Text>
+                                    <Text
+                                        color="red.700"
+                                        fontSize={{ base: 12, md: 20 }}
+                                    >
+                                        Cores:
+                                    </Text>
                                     <Select
-                                        w={100}
+                                        w={90}
                                         bg="transparent"
                                         border="1px solid red.700"
                                         fontSize={12}
+                                        h={{ base: "30px", md: "46px" }}
                                         variant="cart"
                                         onChange={({ target: { value } }) =>
                                             onClickAttColor(value)
@@ -91,43 +123,26 @@ const CartProductCard: React.FC<IProps> = ({
                             )}
                         </Flex>
                     </Flex>
-                    <Flex>
-                        <Text
-                            color="red.700"
-                            cursor="pointer"
-                            fontSize={22}
-                            textAlign="center"
-                            alignSelf="flex-end"
-                            mr={3}
-                        >
-                            R${part.price},00
-                        </Text>
-                        <Flex direction="column">
-                            <Text
-                                color="red.700"
-                                cursor="pointer"
-                                fontSize={16}
-                                textAlign="center"
-                                fontWeight={600}
-                            >
-                                Excluir
-                            </Text>
-                            <Center
-                                onClick={onClickRemove}
-                                p={3}
-                                bg="red.700"
-                                transition=".4s"
-                                _hover={{
-                                    bg: "red.500",
-                                }}
-                                rounded="20px"
-                                h="max-content"
-                                cursor="pointer"
-                            >
-                                <RiDeleteBin5Line color="white" size={25} />
-                            </Center>
-                        </Flex>
-                    </Flex>
+                    <Text
+                        color="red.700"
+                        cursor="pointer"
+                        fontWeight={600}
+                        fontSize={{ base: 14, md: 22 }}
+                        textAlign="center"
+                        alignSelf="flex-end"
+                        mr={3}
+                    >
+                        R${part.price},00
+                    </Text>
+                    <Box
+                        cursor="pointer"
+                        onClick={onClickRemove}
+                        position="absolute"
+                        top={2}
+                        right={2}
+                    >
+                        <RiDeleteBin5Line color="red" size={20} />
+                    </Box>
                 </Flex>
             </Flex>
         </Flex>

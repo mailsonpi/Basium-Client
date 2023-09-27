@@ -13,26 +13,32 @@ const Counter: React.FC<IProps> = ({ onChange, quantity }) => {
             rounded="lg"
             border="1px solid"
             borderColor="red"
-            w={100}
+            w={{ base: 70, md: 100 }}
+            h={{ base: "30px", md: "46px" }}
+            px={2}
+            alignItems="center"
+            justifyContent="space-between"
         >
             <Text
+                fontSize={24}
                 cursor="pointer"
-                p={3}
                 color="red"
                 onClick={() => {
                     onChange(quantity === 1 ? 1 : quantity - 1);
                 }}
+                fontWeight={600}
             >
                 -
             </Text>
-            <Text p={3} cursor="default" color="red">
+            <Text cursor="default" color="red">
                 {quantity}
             </Text>
             <Text
+                fontSize={24}
                 cursor="pointer"
-                p={3}
                 onClick={() => onChange(quantity + 1)}
                 color="red"
+                fontWeight={600}
             >
                 +
             </Text>

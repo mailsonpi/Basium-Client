@@ -13,9 +13,10 @@ export type category =
 const Camisas: IPart[] = [
     {
         id: 20001,
-        nome: "FEMENINO teste",
+        nome: "FEMENINO teste Cor",
         marca: "adidas",
         price: 78,
+        cores: ["Azul", "Verde", "Vermelho"],
         image: [
             "/img/products/f1.jpg",
             "/img/products/f2.jpg",

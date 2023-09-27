@@ -1,6 +1,14 @@
 import React from "react";
 import MainLayout from "@/layout/MainLayout";
-import { Center, Flex, Text, Heading, Button, Box } from "@chakra-ui/react";
+import {
+    Center,
+    Flex,
+    Text,
+    Heading,
+    Button,
+    Box,
+    Divider,
+} from "@chakra-ui/react";
 import { useCheckSexSelected } from "@/context";
 import { whatsappNumber } from "@/resources/whatsappNumber";
 import CartProductCard from "@/components/CartProductCard";
@@ -10,14 +18,14 @@ interface IItems {
     id: number;
     marca: string;
     price: number;
-    image: string;
+    image: string[];
     description: string;
     tamanhos: string[];
     category: string[];
+    cores?: string[];
     quantity: string;
     size: string;
     color: string;
-    colors?: string[];
 }
 
 const Cart = () => {
@@ -43,7 +51,7 @@ Produto: ${item.nome}
 
 Tamanho: ${item.size}
 
-Cor: ${item.cor}
+Cor: ${item.color}
 
 Quantidade: ${item.quantity}
 
@@ -128,29 +136,35 @@ Valor total do pedido: R$${total}.00
                 </Center>
                 <Flex
                     direction="column"
-                    p={5}
+                    p={{ base: 1, md: 5 }}
                     bg="white"
                     rounded="xl"
                     w={{ base: "90%", md: 700 }}
                     mx="auto"
                 >
-                    <Flex w="100%" mx="auto" direction="column" gap={3}>
+                    <Flex w="100%" mx="auto" direction="column">
                         {products.map((item, index) => (
-                            <CartProductCard
-                                key={index}
-                                onClickAttQuantity={(e) =>
-                                    attQuantity(index, e)
-                                }
-                                onClickRemove={() => onClickRemove(index)}
-                                onClickAttColor={(e) => attColor(index,e)}
-                                part={{
-                                    nome: item.nome,
-                                    price: item.price * Number(item.quantity),
-                                    quantidade: Number(item.quantity),
-                                    tamanhos: item.tamanhos,
-                                    cores: item.colors,
-                                }}
-                            />
+                            <Box key={index}>
+                                {index > 0 && <Divider my={4} />}
+                                <CartProductCard
+                                    key={index}
+                                    onClickAttQuantity={(e) =>
+                                        attQuantity(index, e)
+                                    }
+                                    onClickRemove={() => onClickRemove(index)}
+                                    onClickAttColor={(e) => attColor(index, e)}
+                                    part={{
+                                        nome: item.nome,
+                                        price:
+                                            item.price * Number(item.quantity),
+                                        quantidade: Number(item.quantity),
+                                        tamanhos: item.tamanhos,
+                                        cores: item.cores,
+                                        colorSelected: item.color,
+                                        image: item.image[0],
+                                    }}
+                                />
+                            </Box>
                         ))}
                     </Flex>
                     <Box w="100%" h="1px" mt={5} bg="red.700" />

@@ -63,6 +63,8 @@ export const Select: ComponentStyleConfig = {
                 h: "46px",
                 rounded: "lg",
                 borderWidth: 1,
+                p: 0,
+                pl: 2,
                 borderColor: "red",
                 _hover: {
                     borderColor: "secondary.500",

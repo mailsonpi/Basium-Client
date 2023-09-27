@@ -65,9 +65,9 @@ const ProductDetails: NextPage = () => {
             if (!alreadyExist) {
                 allProducts.push({
                     ...product,
+                    color: cor,
                     quantity,
                     size,
-                    cor,
                 });
                 window.localStorage.setItem(
                     "cartItems",
