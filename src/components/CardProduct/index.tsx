@@ -1,9 +1,10 @@
 import React from "react";
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { AiFillStar } from "react-icons/ai";
 import { BsCart4 } from "react-icons/bs";
 import { IPart } from "@/resources/products/masculino/camisas";
 import { useCheckSexSelected } from "@/context";
+import Image from "next/image";
 
 interface IProps {
     product: IPart;
@@ -25,10 +26,15 @@ const CardProduct: React.FC<IProps> = ({ product, onClick }) => {
             mx="auto"
         >
             <Image
-                rounded={"30px"}
-                w="100%"
+                style={{
+                    borderRadius: "30px",
+                    width: "100%",
+                }}
                 src={product.image[0]}
                 alt="camisa"
+                layout="responsive"
+                width={400}
+                height={400}
             />
             <Text
                 mt={5}

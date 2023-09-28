@@ -1,11 +1,21 @@
 import React from "react";
 import { Flex, Image, ListItem, List, Text, Grid } from "@chakra-ui/react";
+import { whatsappNumber } from "@/resources/whatsappNumber";
 import { useRouter } from "next/router";
 import { useCheckSexSelected } from "@/context";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
     const { sexSelected } = useCheckSexSelected();
     const router = useRouter();
+
+    const sendMessage = (message: string) => {
+        const url = `whatsapp://send?phone=${whatsappNumber}&text=${encodeURIComponent(
+            message
+        )}`;
+        window.location.href = url;
+    };
+
     return (
         <Flex
             flexDirection="column"
@@ -33,16 +43,20 @@ const Footer: React.FC = () => {
                     mb={10}
                     justifyContent={{ base: "center", md: "left" }}
                 >
-                    <Image
-                        w={{ base: 100, md: 150 }}
-                        src="/MARCAGIRASSOL.svg"
-                        alt="Girassol"
-                    />
-                    <Image
-                        w={{ base: 100, md: 150 }}
-                        src="/MARCAZILLA.svg"
-                        alt="Zilla"
-                    />
+                    <Link href={"https://agroplanassessoria.com/"}>
+                        <Image
+                            w={{ base: 100, md: 150 }}
+                            src="/MARCAGIRASSOL.svg"
+                            alt="Agroplan"
+                        />
+                    </Link>
+                    <Link href={"https://www.zillasprime.com/"}>
+                        <Image
+                            w={{ base: 100, md: 150 }}
+                            src="/MARCAZILLA.svg"
+                            alt="Zilla"
+                        />
+                    </Link>
                 </Flex>
                 <Grid
                     gridTemplateColumns={{
@@ -100,6 +114,9 @@ const Footer: React.FC = () => {
                             transition=".4s"
                             _hover={{ opacity: 0.4 }}
                             cursor="pointer"
+                            onClick={() =>
+                                sendMessage("Olá, gostaria de conversar!")
+                            }
                         >
                             Contato
                         </ListItem>
@@ -143,6 +160,11 @@ const Footer: React.FC = () => {
                             transition=".4s"
                             _hover={{ opacity: 0.4 }}
                             cursor="pointer"
+                            onClick={() =>
+                                sendMessage(
+                                    "Olá, gostaria de receber informações de rastreio do meu pedido!"
+                                )
+                            }
                         >
                             Acompanhar meu Pedido
                         </ListItem>

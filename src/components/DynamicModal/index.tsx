@@ -11,9 +11,9 @@ import {
     ModalFooter,
     ModalCloseButton,
     Box,
-    Image,
 } from "@chakra-ui/react";
 import React from "react";
+import Image from "next/image";
 
 interface IProps {
     children: React.ReactNode;
@@ -65,11 +65,16 @@ const DynamicModal: React.FC<IProps> = ({
                         {title}
                     </ModalHeader>
                     <Image
-                        w="90%"
-                        mx="auto"
-                        rounded="md"
                         src={image}
-                        alt={title}
+                        style={{
+                            borderRadius: "10px",
+                            width: "90%",
+                            margin: "0 auto",
+                        }}
+                        alt="camisa"
+                        layout=""
+                        width={300}
+                        height={300}
                     />
                     <ModalCloseButton />
                     <ModalBody
