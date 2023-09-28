@@ -18,12 +18,15 @@ export type category =
     | "Blazer"
     | "T-Shirts"
     | "Calças Jeans"
-    | "Blusas Sociais";
+    | "Blusas Sociais"
+    | "Moda Casual"
+    | "Moda Corporativa"
+    | "Livros";
 
 const Camisas: IPart[] = [
     {
         id: 1,
-        nome: "Cartoon Astronaut T-Shirts",
+        nome: "Moda Corporativa",
         marca: "adidas",
         price: 78,
         image: [
@@ -33,7 +36,7 @@ const Camisas: IPart[] = [
         ],
         tamanhos: ["P", "M"],
         cores: ["Preta", "Azul", "Vermelho"],
-        category: ["Camisas", "T-Shirts"],
+        category: ["Camisas", "T-Shirts", "Moda Corporativa"],
         description:
             "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear.",
     },

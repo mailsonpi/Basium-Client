@@ -3,7 +3,7 @@ import { IPart } from "../masculino/camisas";
 const calcaAlfaiataria: IPart[] = [
     {
         id: 801,
-        nome: "Calça Alfaiataria Skinny Grifle Casual Masculina - Preto",
+        nome: "Moda casual",
         marca: "cyclone",
         price: 450,
         image: [
@@ -12,7 +12,7 @@ const calcaAlfaiataria: IPart[] = [
             "/img/products/f3.jpg",
         ],
         tamanhos: ["38", "39", "80"],
-        category: ["Calça Alfaiataria", "C", "Roupa"],
+        category: ["Calça Alfaiataria", "Moda Casual", "Roupa"],
         description:
             "The Gildan Ultra Cotton T-shirt is made fromrovides unmatched comfort with each wear.",
     },

@@ -75,7 +75,7 @@ const HomeCarousel: React.FC = () => {
             },
         },
         {
-            url: "url('/ImgBannerHome/fullbanner_sapatosF.svg')",
+            url: "url('/ImgBannerHome/fullbanner_calcadosF.svg')",
             text2: "Calçados a partir de",
             text3: "R$ 179,90",
             off: {

@@ -1,9 +1,18 @@
 import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { useCheckSexSelected } from "@/context";
+import { useRouter } from "next/router";
+import { category } from "@/resources/products/masculino/camisas";
 
 const Categories: React.FC = () => {
     const { sexSelected } = useCheckSexSelected();
+    const router = useRouter();
+
+    const onGoToFilteredProducts = (filter: category) => {
+        localStorage.setItem("category", filter);
+        router.push("filteredProducts");
+    };
+
     return (
         <Flex
             justifyContent="center"
@@ -49,6 +58,9 @@ const Categories: React.FC = () => {
                         transition=".4s"
                         border="1px solid white"
                         w="max-content"
+                        onClick={() =>
+                            onGoToFilteredProducts("Moda Corporativa")
+                        }
                     >
                         <Text cursor="pointer" fontWeight={600}>
                             Explorar
@@ -92,6 +104,7 @@ const Categories: React.FC = () => {
                         transition=".4s"
                         border="1px solid white"
                         w="max-content"
+                        onClick={() => onGoToFilteredProducts("Moda Casual")}
                     >
                         <Text cursor="pointer" fontWeight={600}>
                             Explorar
@@ -137,6 +150,7 @@ const Categories: React.FC = () => {
                         transition=".4s"
                         border="1px solid white"
                         w="max-content"
+                        onClick={() => onGoToFilteredProducts("Acessórios")}
                     >
                         <Text cursor="pointer" fontWeight={600}>
                             Explorar
@@ -148,7 +162,7 @@ const Categories: React.FC = () => {
                     h={{ base: 200, md: 330 }}
                     minW={325}
                     mb={5}
-                    bg="url('/imgCategory/b4.jpg')"
+                    bg="url('/imgCategory/imagem_livros.png')"
                     direction="column"
                     justifyContent="center"
                     bgSize="cover"
@@ -176,6 +190,7 @@ const Categories: React.FC = () => {
                         transition=".4s"
                         border="1px solid white"
                         w="max-content"
+                        onClick={() => onGoToFilteredProducts("Livros")}
                     >
                         <Text cursor="pointer" fontWeight={600}>
                             Explorar
