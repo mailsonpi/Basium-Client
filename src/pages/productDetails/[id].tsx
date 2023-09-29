@@ -109,7 +109,7 @@ const ProductDetails: NextPage = () => {
                 <Flex
                     direction={{ base: "column", md: "row" }}
                     justifyContent="center"
-                    w="100%"
+                    w={{ base: "330px", md: "500px" }}
                 >
                     <Flex direction="column" gap={3} w="100%">
                         <Carousel
@@ -125,12 +125,13 @@ const ProductDetails: NextPage = () => {
                             {product?.image.map((item, index) => (
                                 <Box
                                     key={index}
-                                    w={{ base: "350px", md: "500px" }}
-                                    h={{ base: "50vh", md: "500px" }}
+                                    w={{ base: "330px", md: "500px" }}
+                                    h={{ base: "max-content", md: "500px" }}
                                     mx="auto"
                                 >
                                     <Image
                                         objectFit="cover"
+                                        objectPosition="center"
                                         src={item}
                                         alt={item + index}
                                         mx="auto"
@@ -165,8 +166,8 @@ const ProductDetails: NextPage = () => {
                             </Text>
                         </Flex>
                         <Heading
-                            fontSize={{ base: 28, md: 40 }}
-                            maxW={"50%"}
+                            fontSize={{ base: 24, md: 40 }}
+                            maxW={{ base: "90%", md: "100%" }}
                             color={
                                 sexSelected === "masculine"
                                     ? "white"
