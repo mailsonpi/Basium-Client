@@ -128,7 +128,6 @@ const ProductDetails: NextPage = () => {
                                     w={{ base: "350px", md: "500px" }}
                                     h={{ base: "50vh", md: "500px" }}
                                     mx="auto"
-                                    
                                 >
                                     <Image
                                         objectFit="cover"
