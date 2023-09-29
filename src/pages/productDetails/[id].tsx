@@ -111,7 +111,7 @@ const ProductDetails: NextPage = () => {
                     justifyContent="center"
                     w="100%"
                 >
-                    <Flex direction="column" gap={3} w="500px">
+                    <Flex direction="column" gap={3} w="100%">
                         <Carousel
                             showIndicators={false}
                             showArrows={false}
@@ -128,7 +128,7 @@ const ProductDetails: NextPage = () => {
                                     w={{ base: "350px", md: "500px" }}
                                     h={{ base: "50vh", md: "500px" }}
                                     mx="auto"
-                                    bg="red"
+                                    
                                 >
                                     <Image
                                         objectFit="cover"
