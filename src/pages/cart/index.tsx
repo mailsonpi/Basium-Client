@@ -9,10 +9,12 @@ import {
     Button,
     Box,
     Divider,
+    chakra,
 } from "@chakra-ui/react";
 import { useCheckSexSelected } from "@/context";
 import { whatsappNumber } from "@/resources/whatsappNumber";
 import CartProductCard from "@/components/CartProductCard";
+import { useRouter } from "next/router";
 
 interface IItems {
     nome: string;
@@ -31,6 +33,7 @@ interface IItems {
 
 const Cart = () => {
     const { sexSelected } = useCheckSexSelected();
+    const router = useRouter();
     const sendMessage = () => {
         if (typeof window !== "undefined") {
             const local = localStorage.getItem("cartItems");
@@ -139,54 +142,104 @@ Valor total do pedido: R$${total}.00
                         Adicione seu código de cupom e economize até 70%!
                     </Text>
                 </Center>
-                <Flex
-                    direction="column"
-                    p={{ base: 1, md: 5 }}
-                    bg="white"
-                    rounded="xl"
-                    w={{ base: "90%", md: 700 }}
-                    mx="auto"
-                >
-                    <Flex w="100%" mx="auto" direction="column">
-                        {products.map((item, index) => (
-                            <Box key={index}>
-                                {index > 0 && <Divider my={4} />}
-                                <CartProductCard
-                                    key={index}
-                                    onClickAttQuantity={(e) =>
-                                        attQuantity(index, e)
-                                    }
-                                    onClickRemove={() => onClickRemove(index)}
-                                    onClickAttColor={(e) => attColor(index, e)}
-                                    part={{
-                                        nome: item.nome,
-                                        price:
-                                            item.price * Number(item.quantity),
-                                        quantidade: Number(item.quantity),
-                                        tamanhos: item.tamanhos,
-                                        cores: item.cores,
-                                        colorSelected: item.color,
-                                        image: item.image[0],
-                                    }}
-                                />
-                            </Box>
-                        ))}
+                {products.length > 0 ? (
+                    <Flex
+                        direction="column"
+                        p={{ base: 1, md: 5 }}
+                        bg="white"
+                        rounded="xl"
+                        w={{ base: "90%", md: 700 }}
+                        mx="auto"
+                    >
+                        <Flex w="100%" mx="auto" direction="column">
+                            {products.map((item, index) => (
+                                <Box key={index}>
+                                    {index > 0 && <Divider my={4} />}
+                                    <CartProductCard
+                                        key={index}
+                                        onClickAttQuantity={(e) =>
+                                            attQuantity(index, e)
+                                        }
+                                        onClickRemove={() =>
+                                            onClickRemove(index)
+                                        }
+                                        onClickAttColor={(e) =>
+                                            attColor(index, e)
+                                        }
+                                        part={{
+                                            nome: item.nome,
+                                            price:
+                                                item.price *
+                                                Number(item.quantity),
+                                            quantidade: Number(item.quantity),
+                                            tamanhos: item.tamanhos,
+                                            cores: item.cores,
+                                            colorSelected: item.color,
+                                            image: item.image[0],
+                                        }}
+                                    />
+                                </Box>
+                            ))}
+                        </Flex>
+                        <Box w="100%" h="1px" mt={5} bg="red.700" />
                     </Flex>
-                    <Box w="100%" h="1px" mt={5} bg="red.700" />
-                </Flex>
-                <Button
-                    w="max-content"
-                    bg="primary.500"
-                    color="white"
-                    my={10}
-                    mx="auto"
-                    _hover={{
-                        bg: "primary.400",
-                    }}
-                    onClick={sendMessage}
-                >
-                    Finalizar Pedido
-                </Button>
+                ) : (
+                    <Text textAlign="center" fontSize={28} my={10}>
+                        Seu carrinho está vazio!{" "}
+                        <chakra.span
+                            _hover={{ color: "secondary.700" }}
+                            onClick={() => router.push("/allProducts")}
+                            transition=".4s"
+                            color={
+                                sexSelected === "masculine"
+                                    ? "primary.400"
+                                    : "secondary.900"
+                            }
+                            cursor="pointer"
+                            fontWeight={600}
+                        >
+                            Adicione um item da lista de produtos!
+                        </chakra.span>
+                    </Text>
+                )}
+                {products.length > 0 && (
+                    <>
+                        <Button
+                            w="max-content"
+                            bg="primary.500"
+                            color="white"
+                            my={10}
+                            mx="auto"
+                            _hover={{
+                                bg: "primary.400",
+                            }}
+                            onClick={sendMessage}
+                        >
+                            Finalizar Pedido
+                        </Button>
+                        <Button
+                            variant="ghost"
+                            onClick={() => {
+                                localStorage.clear();
+                                setProducts([]);
+                            }}
+                            w="max-content"
+                            mx="auto"
+                            color={
+                                sexSelected === "masculine"
+                                    ? "primary.400"
+                                    : "secondary.900"
+                            }
+                            textDecorationLine="underline"
+                            mb={5}
+                            _hover={{
+                                bg: "transparent",
+                            }}
+                        >
+                            Limpar carrinho.
+                        </Button>
+                    </>
+                )}
             </Flex>
         </MainLayout>
     );

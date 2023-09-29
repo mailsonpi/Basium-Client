@@ -9,10 +9,10 @@ const HomeCarousel: React.FC = () => {
 
     const bannersMasculine = [
         {
-            url: "url('/ImgBannerHome/fullbanner_sloganM.svg')",
+            url: "url('/ImgBannerHome/fullbanner_calca.svg')",
             text1: "Grandes Ofertas",
-            text2: "Seu estilo com",
-            text3: "toque de classe!",
+            text2: "Roupas a partir de",
+            text3: "R$ 79,90",
             off: {
                 text1: "Parcelas de 6x sem juros",
                 text2: "Enviamos para todo Brasil",
@@ -20,10 +20,10 @@ const HomeCarousel: React.FC = () => {
             },
         },
         {
-            url: "url('/ImgBannerHome/fullbanner_calca.svg')",
+            url: "url('/ImgBannerHome/fullbanner_sloganM.svg')",
             text1: "Grandes Ofertas",
-            text2: "Roupas a partir de",
-            text3: "R$ 79,90",
+            text2: "Seu estilo com",
+            text3: "toque de classe!",
             off: {
                 text1: "Parcelas de 6x sem juros",
                 text2: "Enviamos para todo Brasil",

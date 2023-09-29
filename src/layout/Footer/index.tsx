@@ -85,14 +85,16 @@ const Footer: React.FC = () => {
                         >
                             Sobre
                         </ListItem>
-                        <ListItem
-                            textAlign={{ base: "center", md: "left" }}
-                            transition=".4s"
-                            _hover={{ opacity: 0.4 }}
-                            cursor="pointer"
-                        >
-                            Sobre nós
-                        </ListItem>
+                        <Link href={"/about"}>
+                            <ListItem
+                                textAlign={{ base: "center", md: "left" }}
+                                transition=".4s"
+                                _hover={{ opacity: 0.4 }}
+                                cursor="pointer"
+                            >
+                                Sobre nós
+                            </ListItem>
+                        </Link>
                         <ListItem
                             textAlign={{ base: "center", md: "left" }}
                             transition=".4s"
