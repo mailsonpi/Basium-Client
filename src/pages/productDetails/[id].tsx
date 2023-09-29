@@ -125,8 +125,8 @@ const ProductDetails: NextPage = () => {
                             {product?.image.map((item, index) => (
                                 <Box
                                     key={index}
-                                    w={{ base: "90%", md: "500px" }}
-                                    h={{ base: "40vh", md: "500px" }}
+                                    w={{ base: "350px", md: "500px" }}
+                                    h={{ base: "50vh", md: "500px" }}
                                     mx="auto"
                                     bg="red"
                                 >
