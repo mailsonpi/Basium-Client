@@ -185,7 +185,7 @@ Valor total do pedido: R$${total}.00
                     </Flex>
                 ) : (
                     <Text textAlign="center" fontSize={28} my={10}>
-                        Seu carrinho está vazio!{" "}
+                        Seu carrinho está vazio! Adicione um item da{" "}
                         <chakra.span
                             _hover={{ color: "secondary.700" }}
                             onClick={() => router.push("/allProducts")}
@@ -198,7 +198,7 @@ Valor total do pedido: R$${total}.00
                             cursor="pointer"
                             fontWeight={600}
                         >
-                            Adicione um item da lista de produtos!
+                            lista de produtos!
                         </chakra.span>
                     </Text>
                 )}
