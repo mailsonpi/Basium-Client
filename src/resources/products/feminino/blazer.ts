@@ -6,7 +6,6 @@ export type category =
     | "Bermudas"
     | "Calças Alfaiataria"
     | "Blazer"
-    | "Blazer"
     | "Calças Jeans"
     | "Blusas Sociais";
 

@@ -26,19 +26,46 @@ export type category =
 const Camisas: IPart[] = [
     {
         id: 1,
-        nome: "Moda Corporativa",
-        marca: "adidas",
-        price: 78,
+        nome: "Camisa do maior time do Brasil",
+        marca: "Qualidade",
+        price: 500,
         image: [
-            "/img/products/f1.jpg",
-            "/img/products/f2.jpg",
-            "/img/products/f3.jpg",
+            "/masculino/camisa/camisasp.jpg",
         ],
-        tamanhos: ["P", "M"],
+        tamanhos: ["P", "M","GG"],
         cores: ["Preta", "Azul", "Vermelho"],
         category: ["Camisas", "T-Shirts", "Moda Corporativa"],
         description:
-            "The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear.",
+            "Camisa do maior time do Brasil",
+    },
+    {
+        id: 2,
+        nome: "Camisa do maior time do Brasil",
+        marca: "Qualidade",
+        price: 500,
+        image: [
+            "/masculino/camisa/camisasp.jpg",
+        ],
+        tamanhos: ["P", "M","GG"],
+        cores: ["Preta", "Azul", "Vermelho"],
+        category: ["Camisas", "T-Shirts", "Moda Corporativa"],
+        description:
+            "Camisa do maior time do Brasil",
+    },
+    {
+        id: 3,
+        nome: "Camisa do maior time do Brasil",
+        marca: "Qualidade",
+        price: 500,
+        image: [
+            "/masculino/camisa/camisasp.jpg",
+            "/masculino/camisa/camisasp.jpg",
+        ],
+        tamanhos: ["P", "M","GG"],
+        cores: ["Preta", "Azul", "Vermelho"],
+        category: ["Camisas", "T-Shirts", "Moda Corporativa"],
+        description:
+            "Camisa do maior time do Brasil",
     },
 ];
 
